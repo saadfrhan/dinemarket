@@ -32,14 +32,14 @@ function Navbar() {
 function MobileNavbar() {
   const [showOverlay, setShowOverlay] = useState(false);
   return (
-    <div className={`nav_mobile-box ${showOverlay && 'mb-[3.9rem]'}`}>
+    <div className={`nav_mobile-box`}>
       <div className={`
-      ${showOverlay && `h-screen flex bg-white flex-col items-center justify-center fixed top-0 left-0 w-full z-[3] transition-all duration-500 ease-in-out`}
+      ${showOverlay && `h-screen flex flex-col bg-white items-center justify-center fixed top-0 left-0 w-full z-[3]`}
       `}>
-      {!showOverlay && <div className="flex items-end justify-end"><AlignRight className="cursor-pointer" width="40" height="30" onClick={() => setShowOverlay(true)} /></div>}
+      {!showOverlay && <div className="absolute max-[650px]:top-8 max-[650px]:right-8 cursor-pointer max-[1000px]:top-16 max-[1000px]:right-16" ><AlignRight width="40" height="30" onClick={() => setShowOverlay(true)} /></div>}
       <div>
         <div className="flex justify-between items-center m-auto">
-          <div className='absolute top-8 left-8 cursor-pointer'>
+          <div className='absolute max-[650px]:top-8 max-[650px]:left-8 cursor-pointer max-[1000px]:top-16 max-[1000px]:left-16'>
             <Logo />
           </div>
           {showOverlay && (<X className="cursor-pointer absolute top-8 right-8" width="40" height="30" onClick={() => setShowOverlay(false)} />)}
