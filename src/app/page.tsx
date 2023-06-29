@@ -131,7 +131,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductOne} width={380} height={400} className='product-image' />
+                  <Image src={ProductOne} alt="asdas" width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
@@ -144,7 +144,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductTwo} width={380} height={400} className='product-image' />
+                  <Image src={ProductTwo} alt="adsadas" width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
@@ -157,7 +157,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductThree} width={380} height={400} className='product-image' />
+                  <Image src={ProductThree} alt="klj" width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
@@ -170,7 +170,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductFour} width={380} height={400} className='product-image' />
+                  <Image src={ProductFour} alt="klj" width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
@@ -183,7 +183,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductFive} width={380} height={400} className='product-image' />
+                  <Image src={ProductFive} alt="klj" width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
@@ -196,7 +196,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductSix} width={380} height={400} className='product-image' />
+                  <Image src={ProductSix} alt="klj" width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
@@ -209,7 +209,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductOne} width={380} height={400} className='product-image' />
+                  <Image src={ProductOne} alt="klj" width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
