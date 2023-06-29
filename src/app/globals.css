@@ -80,7 +80,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden max-w-full;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -127,7 +127,7 @@
   }
 
   .header-featured {
-    @apply grid grid-cols-4 max-[650px]:grid-cols-2 w-fit gap-4 gap-x-6
+    @apply grid grid-cols-4 max-[650px]:grid-cols-2 w-full gap-4 gap-x-6
   }
 
   .header-right-side {
@@ -273,6 +273,91 @@
 
   .products-outer-container {
     @apply py-[4rem] px-[8rem] max-[1290px]:px-[6rem] max-[1210px]:px-[4rem] max-[650px]:py-[4rem] max-[650px]:px-[2rem]
+  }
+
+  .features-section {
+    @apply max-[1210px]:mt-0 mt-16
+  }
+
+  .features-section .title {
+    @apply max-[650px]:py-8 max-[650px]:px-8 max-[1210px]:justify-center flex justify-end min-[1290px]:pt-0 min-[1290px]:pb-8 min-[1290px]:px-32 bg-gradient-to-r from-white to-[#fbfcff] max-[1210px]:py-8 max-[1210px]:px-16 max-[1290px]:py-0 max-[1290px]:px-24
+  }
+
+  .features-section .title h1 {
+    @apply max-[650px]:text-[2.5rem] max-[1000px]:w-full max-[1210px]:w-[80%] font-bold text-[2.75rem] leading-[55px] tracking-[.03em] text-[#212121] w-[43%] 
+  }
+
+  .features-section .content {
+    @apply max-[1210px]:py-8 max-[1210px]:px-16 max-[1290px]:py-0 max-[1290px]:px-24
+  }
+
+  .features-section .content {
+    @apply max-[650px]:py-0 max-[650px]:px-8 max-[1210px]:grid-cols-[1fr] gap-y-[4rem] grid grid-cols-2 px-32 pt-0 pb-16 bg-[#fbfcff]
+  }
+
+  .features-section .content .left {
+    @apply max-[1210px]:gap-y-[2rem] grid grid-cols-2 justify-center items-center relative
+  }
+
+  .features-section .content .left .feature-background {
+    @apply max-[650px]:text-[4.8rem] max-[1000px]:text-[6rem] font-extrabold text-[6.875rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1] 
+  }
+
+  .features-section .content .left div {
+    @apply max-[1210px]:w-full w-[70%] z-[2]
+  }
+
+  .features-section .content .left h3 {
+    @apply font-semibold text-[1.125rem] leading-[20px] tracking-[.03em] text-[#212121] mb-4 
+  }
+
+  .features-section .content .left p {
+    @apply font-light text-[1rem] leading-[22px] tracking-wider text-[#212121]
+  }
+
+  .features-section .content .right {
+    @apply max-[650px]:flex-col flex justify-center items-center gap-10
+  }
+
+  .features-section .content .right div {
+    @apply flex flex-col gap-8
+  }
+
+  .features-section .content .right img {
+    @apply w-full
+  }
+
+  .features-section .content .right p {
+    @apply font-light text-[1rem] leading-[26px] text-justify text-[#212121]
+  }
+
+  .features-section .btn {
+    @apply text-[.875rem] w-[50%] font-semibold leading-[18px] bg-[#212121] py-[10px] px-0 flex items-center justify-center gap-2 text-[#fff]
+  }
+
+  .newsletter {
+    @apply max-[650px]:py-[6rem] max-[650px]:px-[2rem] max-[1210px]:px-[6rem] max-[1210px]:px-[4rem] py-[10rem] px-[8rem] flex flex-col justify-center items-center text-center relative z-[1]
+  }
+
+  .newsletter-background {
+    @apply max-[650px]:text-[4rem] max-[1000px]:text-[6.2rem] font-extrabold text-[7.5rem] leading-[151px] text-[#f2f3f7] absolute z-[-1] 
+  }
+
+  .newsletter h1 {
+    @apply max-[650px]:mb-[.5rem] max-[650px]:text-[1.8rem] mb-4 font-bold text-[2rem] leading-[40px] tracking-[.03em] text-[#212121]
+  }
+
+  .newsletter input, .newsletter p {
+    @apply max-[650px]:mb-4
+  }
+
+
+  .newsletter input {
+    @apply py-[10px] pr-[120px] pl-[20px] bg-[#fcfcfc] border-[1px] border-gray-500 
+  }
+
+  .newsletter button {
+    @apply max-[650px]:ml-0 max-[1000px]:py-[10px] max-[1000px]:px-[40px] py-[10px] px-[20px] ml-[10px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
   }
 
 }
