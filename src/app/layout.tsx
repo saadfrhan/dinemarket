@@ -1,6 +1,7 @@
 import { MobileNavbar, Navbar } from '@/components/Navbar'
 import './globals.css'
 import {Sora} from 'next/font/google'
+import Footer from '@/components/Footer';
 const sora = Sora({ subsets: ['latin'] });
 
 export default function RootLayout({
@@ -16,6 +17,7 @@ export default function RootLayout({
         <div className="min-[1000px]:hidden"><MobileNavbar /></div>
         </nav>
         {children}
+        <Footer />
       </body>
     </html>
   )

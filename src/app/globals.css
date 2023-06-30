@@ -84,30 +84,28 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  .nav-mobile-box {
+  .nav_mobile-box {
     @apply max-[650px]:mx-[2rem] max-[650px]:mt-[2rem] max-[1000px]:mx-[4rem] max-[1000px]:mt-[4rem] max-[1210px]:mx-[2rem] max-[1210px]:mt-[2rem]
   }
 
   .header {
-    @apply 
-    max-[650px]:m-[2rem] 
+    @apply max-[1000px]:flex-col max-[1000px]:justify-center max-[1000px]:items-center  relative flex justify-between gap-16 
+  }
 
-    max-[1000px]:flex-col 
-    max-[1000px]:justify-center 
-    max-[1000px]:items-center 
-    
-    max-[1210px]:m-[4rem] 
-    
-    max-[1290px]:my-[4rem] 
-    max-[1210px]:mx-[6rem] relative flex justify-between gap-16 my-[4rem] mx-[8rem]
+  .Allproducts-container, .cart-wrapper, .header, .success {
+    @apply m-[4rem_8rem] max-[1210px]:m-[4rem] max-[1290px]:my-[4rem_6rem]
   }
 
   .header-left-side {
-    @apply flex flex-col max-[1000px]:py-[5rem] max-[1000px]:px-0 justify-between pt-12 px-0 pb-4 flex-1
+    @apply justify-between p-[3rem_0_1rem] flex-1
   }
 
   .header-content {
-    @apply max-[650px]:gap-8 max-[650px]:mb-8 mb-12 justify-center flex flex-col gap-10
+    @apply max-[650px]:gap-8 max-[650px]:mb-8 mb-12 justify-center gap-10
+  }
+
+  .header-content, .header-left-side {
+    @apply flex flex-col
   }
 
   .header-sale-button {
@@ -136,15 +134,15 @@
 
   .header-circle,
   .header-img {
-    @apply absolute top-[-5%]
+    @apply absolute top-[-5%] 
+  }
+
+  .header-right-side, .header-left-side {
+    @apply flex flex-1
   }
 
   .header-circle {
-    @apply w-[600px] h-[600px] rounded-[50%] bg-[#ffece3] max-[1000px]:right-[-23%];
-  }
-
-  .event-container {
-    @apply max-[650px]:py-[4rem] max-[650px]:px-[2rem] max-[1210px]:p-[4rem] max-[1290px]:py-[4rem] max-[1290px]:px-[6rem] py-[4rem] px-[8rem]
+    @apply w-[600px] h-[600px] rounded-[50%] bg-[#ffece3]
   }
 
   .subtitle {
@@ -271,36 +269,32 @@
     @apply text-[1.12rem]
   }
 
-  .products-outer-container {
-    @apply py-[4rem] px-[8rem] max-[1290px]:px-[6rem] max-[1210px]:px-[4rem] max-[650px]:py-[4rem] max-[650px]:px-[2rem]
-  }
-
   .features-section {
     @apply max-[1210px]:mt-0 mt-16
   }
 
   .features-section .title {
-    @apply max-[650px]:py-8 max-[650px]:px-8 max-[1210px]:justify-center flex justify-end min-[1290px]:pt-0 min-[1290px]:pb-8 min-[1290px]:px-32 bg-gradient-to-r from-white to-[#fbfcff] max-[1210px]:py-8 max-[1210px]:px-16 max-[1290px]:py-0 max-[1290px]:px-24
+    @apply max-[1210px]:justify-center max-[1210px]:p-[2rem_4rem] max-[1290px]:p-[0_6rem] flex justify-end p-[0_8rem_2rem] bg-gradient-to-r from-white to-[#fbfcff]
   }
 
   .features-section .title h1 {
-    @apply max-[650px]:text-[2.5rem] max-[1000px]:w-full max-[1210px]:w-[80%] font-bold text-[2.75rem] leading-[55px] tracking-[.03em] text-[#212121] w-[43%] 
+    @apply max-[650px]:text-[2.5rem] max-[1000px]:w-full max-[1210px]:w-[80%] font-bold text-[2.75rem] leading-[55px] tracking-[.03em] text-[#212121] w-[45%] 
   }
 
   .features-section .content {
-    @apply max-[1210px]:py-8 max-[1210px]:px-16 max-[1290px]:py-0 max-[1290px]:px-24
+    @apply max-[1210px]:grid-cols-1 max-[1210px]:gap-[4rem] max-[1290px]:p-[0_6rem] grid grid-cols-2 p-[0_8rem_4rem] bg-[#fbfcff]
   }
 
-  .features-section .content {
-    @apply max-[650px]:py-0 max-[650px]:px-8 max-[1210px]:grid-cols-[1fr] gap-y-[4rem] grid grid-cols-2 px-32 pt-0 pb-16 bg-[#fbfcff]
+  .features-section .content, .features-section .title {
+    @apply max-[1210px]:p-[2rem_4rem]
   }
 
   .features-section .content .left {
-    @apply max-[1210px]:gap-y-[2rem] grid grid-cols-2 justify-center items-center relative
+    @apply max-[1210px]:gap-[2rem] grid grid-cols-2 justify-center items-center relative
   }
 
   .features-section .content .left .feature-background {
-    @apply max-[650px]:text-[4.8rem] max-[1000px]:text-[6rem] font-extrabold text-[6.875rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1] 
+    @apply max-[650px]:text-[5rem] max-[1000px]:text-[6rem] font-extrabold text-[6.8rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1] 
   }
 
   .features-section .content .left div {
@@ -316,15 +310,11 @@
   }
 
   .features-section .content .right {
-    @apply max-[650px]:flex-col flex justify-center items-center gap-10
+    @apply flex justify-center items-center gap-8
   }
 
   .features-section .content .right div {
     @apply flex flex-col gap-8
-  }
-
-  .features-section .content .right img {
-    @apply w-full
   }
 
   .features-section .content .right p {
@@ -336,7 +326,7 @@
   }
 
   .newsletter {
-    @apply max-[650px]:py-[6rem] max-[650px]:px-[2rem] max-[1210px]:px-[6rem] max-[1210px]:px-[4rem] py-[10rem] px-[8rem] flex flex-col justify-center items-center text-center relative z-[1]
+    @apply max-[650px]:py-[6rem_2rem] max-[1210px]:p-[6rem_4rem] p-[10rem_8rem] flex flex-col justify-center items-center text-center relative z-[1]
   }
 
   .newsletter-background {
@@ -347,17 +337,73 @@
     @apply max-[650px]:mb-[.5rem] max-[650px]:text-[1.8rem] mb-4 font-bold text-[2rem] leading-[40px] tracking-[.03em] text-[#212121]
   }
 
-  .newsletter input, .newsletter p {
-    @apply max-[650px]:mb-4
+  .newsletter p {
+    @apply mb-8
   }
 
 
   .newsletter input {
-    @apply py-[10px] pr-[120px] pl-[20px] bg-[#fcfcfc] border-[1px] border-gray-500 
+    @apply p-[6px_116px_6px_16px] bg-[#fcfcfc] border-[1px] border-gray-500 
   }
 
   .newsletter button {
-    @apply max-[650px]:ml-0 max-[1000px]:py-[10px] max-[1000px]:px-[40px] py-[10px] px-[20px] ml-[10px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
+    @apply max-[1000px]:p-[10px_40px] p-[10px_20px] ml-[10px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
+  }
+
+  .footer, .event-container, .products-outer-container {
+    @apply max-[650px]:py-[4rem_2rem] max-[1210px]:p-[4rem] max-[1290px]:p-[2rem_6rem] p-[4rem_8rem]
+  }
+
+  .footer {
+    @apply max-[1000px]:grid-cols-1 max-[1000px]:gap-[2rem] grid grid-cols-[2fr_1fr_1fr_1fr]
+  }
+
+  .footer .logo {
+    @apply max-[1000px]:gap-[2rem] max-[1000px]:w-full flex flex-col justify-between w-[80%]
+  }
+
+  .footer .logo p {
+    @apply max-[1000px]:w-[60%]
+  }
+
+  .footer li, .footer p {
+    @apply font-normal text-[1rem] leading-[22px] text-[#666]
+  }
+
+  .icon-container {
+    @apply flex gap-4
+  }
+
+  .icon-container div {
+    @apply p-[10px_12px] bg-black rounded-[10px] cursor-pointer
+  }
+
+  .footer-links h3 {
+    @apply font-bold text-[1.2rem] leading-[19px] tracking-[.02em] text-[#666]
+  }
+
+  .footer li {
+    @apply first:mt-[25px] mt-[15px]
+  }
+
+  .footer li, .footer p {
+    @apply font-normal text-base leading-[22px] text-[#666]
+  }
+
+  .cart, .size li, button, .footer li, nav li {
+    @apply list-none cursor-pointer
+  }
+
+  .copyright {
+    @apply mt-24 border-t-[1px] border-solid border-[#666] grid grid-cols-[auto_auto_auto] max-[650px]:grid-cols-1 max-[1000px]:mt-0 max-[1000px]:grid-cols-2
+  }
+
+  .copyright p {
+    @apply m-[1.5rem_8rem] max-[1000px]:m-[0.8rem_2rem]
+  }
+
+  .copyright span {
+    @apply font-bold text-base leading-[15px] text-[#212121]
   }
 
 }

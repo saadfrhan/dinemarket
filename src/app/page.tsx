@@ -30,6 +30,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return <div>
@@ -52,7 +53,7 @@ export default function Home() {
       </div>
       <div className="header-right-side">
         <div className="header-circle">
-          <Image src={HeaderImage} alt="header" height="700" width="700" className="header-Image" />
+          <Image src={HeaderImage} alt="header" height="650" width="650" className="header-Image" />
         </div>
       </div>
     </header>
@@ -234,15 +235,15 @@ export default function Home() {
           <p>Lorem ipsum dolor sit amt, consectetus adipiscing elit.</p>
         </div>
         <div>
-          <h3>Using Good Quality Materials</h3>
+          <h3>100% Handmade Products</h3>
           <p>Lorem ipsum dolor sit amt, consectetus adipiscing elit.</p>
         </div>
         <div>
-          <h3>Using Good Quality Materials</h3>
+          <h3>Modern Fashion Design</h3>
           <p>Lorem ipsum dolor sit amt, consectetus adipiscing elit.</p>
         </div>
         <div>
-          <h3>Using Good Quality Materials</h3>
+          <h3>Discount for Bulk Orders</h3>
           <p>Lorem ipsum dolor sit amt, consectetus adipiscing elit.</p>
         </div>
         </div>
@@ -267,7 +268,7 @@ export default function Home() {
       <p>Get the latest information and promo offers directly</p>
       <form>
         <input type="email" placeholder='Input email address' />
-        <button type="submit">Get Started</button>
+        <button type="submit">Get started</button>
       </form>
     </section>
   </div>

@@ -19,7 +19,7 @@ function Navbar() {
 
         my-[2rem] mx-[6rem]
     '>
-    <div className="flex justify-between items-center w-[1040px] m-auto">
+    <div className="flex justify-between items-center w-full m-auto">
       <Logo />
       <NavBtns />
       <Search />
