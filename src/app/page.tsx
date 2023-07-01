@@ -23,14 +23,14 @@ import ProductFour from '/public/TrendProduct4.png';
 import ProductFive from '/public/TrendProduct5.png';
 import ProductSix from '/public/TrendProduct6.png';
 
-import { Navigation, A11y, Lazy } from 'swiper';
+import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+
 import Link from 'next/link';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   return <div>
@@ -57,6 +57,7 @@ export default function Home() {
         </div>
       </div>
     </header>
+
     <section className="event-container">
       <div className="subtitle">
         <span>PROMOTIONS</span>
@@ -101,6 +102,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+
     <div className="products-outer-container">
       <div className="subtitle">
         <span>PRODUCTS</span>
@@ -135,7 +137,7 @@ export default function Home() {
             <div>
               <Link href={`/product/${1}`}>
                 <div className='product-card'>
-                  <Image src={ProductOne} alt="asdas" width={380} height={400} className='product-image' />
+                  <Image src={ProductOne} alt="asdas" loading='lazy' width={380} height={400} className='product-image' />
                   <p className='product-name'>Name</p>
                   <p className='product-price'>$00.00</p>
                 </div>
@@ -223,6 +225,7 @@ export default function Home() {
           </div>
       </Swiper>
     </div>
+
     <section className="features-section">
       <div className="title">
         <h1>Unique and Authentic Vintage Designer Jewellery</h1>
@@ -258,8 +261,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
+    
       </div>
     </section>
+
     <section className="newsletter">
       <div className="newsletter-background">
         Newsletter

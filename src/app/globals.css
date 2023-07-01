@@ -92,9 +92,7 @@
     @apply max-[1000px]:flex-col max-[1000px]:justify-center max-[1000px]:items-center  relative flex justify-between gap-16 
   }
 
-  .Allproducts-container, .cart-wrapper, .header, .success {
-    @apply m-[4rem_8rem] max-[1210px]:m-[4rem] max-[1290px]:my-[4rem_6rem]
-  }
+  
 
   .header-left-side {
     @apply justify-between p-[3rem_0_1rem] flex-1
@@ -404,6 +402,38 @@
 
   .copyright span {
     @apply font-bold text-base leading-[15px] text-[#212121]
+  }
+
+  .Allproducts-container, .cart-wrapper, .header, .success {
+    @apply m-[4rem_8rem] max-[1210px]:m-[4rem] max-[1290px]:m-[4rem_6rem]
+  }
+
+  .Allproducts-container {
+    @apply max-[1000px]:grid-cols-2 max-[1290px]:grid-cols-3 grid grid-cols-4 justify-between items-center gap-[2rem]
+  }
+
+  .Allproduct-card {
+    @apply w-[250px]
+  }
+
+  .Allproduct-card img {
+    @apply w-full h-full
+  }
+
+  .Allproduct-name {
+    @apply text-[1.05rem] mt-2
+  }
+
+  .Allproduct-name, .Allproduct-price {
+    @apply font-semibold leading-6 tracking-[0.03em] text-[#212121]
+  }
+
+  .Allproduct-tags {
+    @apply font-semibold text-[15px] leading-[15px] text-[#888] mt-0.5
+  }
+
+  .Allproduct-price {
+    @apply text-xl mt-4
   }
 
 }
