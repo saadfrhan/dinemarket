@@ -1,8 +1,7 @@
 import { MobileNavbar, Navbar } from '@/components/Navbar'
 import './globals.css'
-import {Sora} from 'next/font/google'
 import Footer from '@/components/Footer';
-const sora = Sora({ subsets: ['latin'] });
+import {sora} from './font'
 
 export default function RootLayout({
   children,

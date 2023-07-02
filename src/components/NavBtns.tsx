@@ -17,7 +17,7 @@ function NavBtns({ className = "flex gap-12" }: {
   className?: string;
 }) {
   return <div className={className}>
-    {Btns.map(b => <NavBtn {...b} />)}
+    {Btns.map((b, i) => <NavBtn {...b} key={i} />)}
   </div>
 }
 

@@ -85,24 +85,25 @@
   }
 
   .nav_mobile-box {
-    @apply max-[650px]:mx-[2rem] max-[650px]:mt-[2rem] max-[1000px]:mx-[4rem] max-[1000px]:mt-[4rem] max-[1210px]:mx-[2rem] max-[1210px]:mt-[2rem]
+    @apply max-[650px]:m-[2rem_2rem_0rem_2rem] max-[1000px]:m-[4rem_4rem_0rem_4rem] max-[1210px]:m-[2rem_2rem_0rem_2rem]
   }
 
   .header {
-    @apply max-[1000px]:flex-col max-[1000px]:justify-center max-[1000px]:items-center  relative flex justify-between gap-16 
+    @apply max-[1000px]: flex-col max-[1000px]:justify-center max-[1000px]:items-center relative flex justify-between gap-16
   }
 
-  
+
 
   .header-left-side {
     @apply justify-between p-[3rem_0_1rem] flex-1
   }
 
   .header-content {
-    @apply max-[650px]:gap-8 max-[650px]:mb-8 mb-12 justify-center gap-10
+    @apply max-[650px]: gap-8 max-[650px]:mb-8 mb-12 justify-center gap-10
   }
 
-  .header-content, .header-left-side {
+  .header-content,
+  .header-left-side {
     @apply flex flex-col
   }
 
@@ -111,7 +112,7 @@
   }
 
   .header-main-heading {
-    @apply font-bold text-6xl leading-[55px] tracking-[0.03em] text-[#212121] max-[650px]:text-5xl
+    @apply font-bold text-6xl leading-[55px] tracking-[0.03em] text-[#212121] max-[650px]: text-5xl
   }
 
   .header-main-helper-text {
@@ -119,23 +120,24 @@
   }
 
   .header-main-button {
-    @apply flex gap-2 p-4 text-white bg-black font-bold w-fit min-[1210px]:w-[150px] text-center justify-center items-center rounded-[6px] min-[1210px]:break-words max-[1000px]:px-[40px] max-[1000px]:py-[20px]
+    @apply flex gap-2 p-4 text-white bg-black font-bold w-fit xl-12: w-[150px] text-center justify-center items-center rounded-[6px] xl-12:break-words max-[1000px]:p-[20px_40px]
   }
 
   .header-featured {
-    @apply grid grid-cols-4 max-[650px]:grid-cols-2 w-full gap-4 gap-x-6
+    @apply grid grid-cols-4 max-[650px]: grid-cols-2 w-full gap-4 gap-x-6
   }
 
   .header-right-side {
-    @apply max-[1000px]:hidden flex flex-1 justify-center items-center
+    @apply max-[1000px]: hidden flex flex-1 justify-center items-center
   }
 
   .header-circle,
   .header-img {
-    @apply absolute top-[-5%] 
+    @apply absolute top-[-5%]
   }
 
-  .header-right-side, .header-left-side {
+  .header-right-side,
+  .header-left-side {
     @apply flex flex-1
   }
 
@@ -161,15 +163,15 @@
   }
 
   .event-banner {
-    @apply flex justify-between gap-8 max-[1000px]:flex-col max-[1000px]:gap-4
+    @apply flex justify-between gap-8 max-[1000px]: flex-col max-[1000px]:gap-4
   }
 
   .event-banner-left {
-    @apply flex grow-[2] shrink-[1] basis-[0%] flex-col gap-4 max-[450px]:flex-col max-[650px]:pt-8 max-[1000px]:pt-0
+    @apply flex grow-[2] shrink-[1] basis-[0%] flex-col gap-4 sm-450: flex-col max-[650px]:pt-8 max-[1000px]:pt-0
   }
 
   .event-card {
-    @apply first:bg-[#d6d6d8] first:flex first:justify-between first:items-center first:py-0 first:px-8 first:tracking-wider first:text-[#212121] first:max-[450px]:flex-col first:max-[650px]:pt-8 first:max-[1000px]:pt-0 last:bg-[#212121] last:text-[#fff] last:flex last:flex-col last:justify-center last:items-center last:pt-12 last:px-8 last:pb-8 last:max-[650px]:p-8 last:max-[1000px]:p-12
+    @apply first: bg-[#d6d6d8] first:flex first:justify-between first:items-center first:py-0 first:px-8 first:tracking-wider first:text-[#212121] first:sm-450:flex-col first:max-[650px]:pt-8 first:max-[1000px]:pt-0 last:bg-[#212121] last:text-white last:flex last:flex-col last:justify-center last:items-center last:pt-12 last:px-8 last:pb-8 last:max-[650px]:p-8 last:max-[1000px]:p-12
   }
 
   .event-card>.content>h3 {
@@ -181,11 +183,11 @@
   }
 
   .event-card:first-child img {
-    @apply max-[650px]:w-[200px] max-[650px]:h-[180px] max-[1000px]:w-[300px] max-[1000px]:h-[250px] w-[260px] h-[200px]
+    @apply max-[650px]: w-[200px] max-[650px]:h-[180px] max-[1000px]:w-[300px] max-[1000px]:h-[250px] w-[260px] h-[200px]
   }
 
   .event-banner-left {
-    @apply max-[450px]:flex-col max-[650px]:pt-8 max-[1000px]:pt-0
+    @apply sm-450: flex-col max-[650px]:pt-8 max-[1000px]:pt-0
   }
 
   .event-card:last-child h3 {
@@ -201,18 +203,19 @@
   }
 
   .event-card button {
-    @apply max-[450px]:text-[.7rem] max-[450px]:w-fit max-[450px]:py-[0.5rem] max-[450px]:px-[1rem] max-[650px]:text-[1rem] font-bold text-[17px] leading-[21px] tracking-[.25em] text-[#fff] border-none bg-[#474747] py-[0.5rem] px-[2.5rem] mt-[5px] rounded-[8px]
+    @apply sm-450: text-[.7rem] sm-450:w-fit sm-450:py-[0.5rem] sm-450:px-[1rem] max-[650px]:text-[1rem] font-bold text-[17px] leading-[21px] tracking-[.25em] text-white border-none bg-[#474747] py-[0.5rem] px-[2.5rem] mt-[5px] rounded-[8px]
   }
 
   .event-banner-right {
-    @apply flex-1 flex items-center justify-between gap-[2rem] max-[650px]:flex-col
+    @apply flex-1 flex items-center justify-between gap-[2rem] max-[650px]: flex-col
   }
 
   .event-banner-right-1 {
-    @apply bg-[#efe1c7] 
+    @apply bg-[#efe1c7]
   }
 
-  .event-banner-right-1, .event-banner-right-2 {
+  .event-banner-right-1,
+  .event-banner-right-2 {
     @apply w-full
   }
 
@@ -225,12 +228,12 @@
   }
 
   .details span {
-    @apply first:after:w-full first:after:h-[1px] first:after:bg-[#212121] first:after:absolute first:after:bottom-[10px] first:after:left-0 first:after:content-[''] first:relative last:font-semibold last:text-[18px] last:leading-[23px] last:ml-[10px]
+    @apply first: after:w-full first:after:h-[1px] first:after:bg-[#212121] first:after:absolute first:after:bottom-[10px] first:after:left-0 first:after:content-[''] first:relative last:font-semibold last:text-[18px] last:leading-[23px] last:ml-[10px]
   }
 
   .event-banner-right-1 img,
   .event-banner-right-2 img {
-    @apply max-[1000px]:w-[240px] max-[1000px]:h-[300px]
+    @apply max-[1000px]: w-[240px] max-[1000px]:h-[300px]
   }
 
   .event-banner-right-1 img,
@@ -247,60 +250,66 @@
     @apply bg-[#d7d7d9]
   }
 
-  .product-card{
-    @apply py-8 pr-0 pl-[1.3rem] transform duration-500 ease-in-out hover:scale-110 max-[1290px]:flex max-[1290px]:flex-col max-[1290px]:justify-center max-[1290px]:items-center max-[1290px]:py-[2rem] max-[1290px]:px-0
+  .product-card {
+    @apply py-8 pr-0 pl-[1.3rem] transform duration-500 ease-in-out hover: scale-110 max-[1290px]:flex max-[1290px]:flex-col max-[1290px]:justify-center max-[1290px]:items-center max-[1290px]:py-[2rem] max-[1290px]:px-0
   }
 
   .product-card img {
-    @apply max-[1000px]:w-[380px] max-[1000px]:h-[400px] max-[650px]:w-[300px] max-[650px]:h-[320px]
+    @apply max-[1000px]: w-[380px] max-[1000px]:h-[400px] max-[650px]:w-[300px] max-[650px]:h-[320px]
   }
+
   .product-card img {
     @apply w-[380px] h-[400px]
   }
-  .product-name, .product-price {
+
+  .product-name,
+  .product-price {
     @apply font-semibold text-[#212121] mt-2 leading-6
   }
+
   .product-name {
     @apply text-[1.1rem] tracking-[0.03em]
   }
+
   .product-price {
     @apply text-[1.12rem]
   }
 
   .features-section {
-    @apply max-[1210px]:mt-0 mt-16
+    @apply max-[1210px]: mt-0 mt-16
   }
 
   .features-section .title {
-    @apply max-[1210px]:justify-center max-[1210px]:p-[2rem_4rem] max-[1290px]:p-[0_6rem] flex justify-end p-[0_8rem_2rem] bg-gradient-to-r from-white to-[#fbfcff]
+    @apply max-[1210px]: justify-center max-[1210px]:p-[2rem_4rem] max-[1290px]:p-[0_6rem] flex justify-end p-[0_8rem_2rem] bg-gradient-to-r from-white to-[#fbfcff]
   }
 
   .features-section .title h1 {
-    @apply max-[650px]:text-[2.5rem] max-[1000px]:w-full max-[1210px]:w-[80%] font-bold text-[2.75rem] leading-[55px] tracking-[.03em] text-[#212121] w-[45%] 
+    @apply max-[650px]: text-[2.5rem] max-[1000px]:w-full max-[1210px]:w-[80%] font-bold text-[2.75rem] leading-[55px] tracking-[.03em] text-[#212121] w-[45%]
   }
 
   .features-section .content {
-    @apply max-[1210px]:grid-cols-1 max-[1210px]:gap-[4rem] max-[1290px]:p-[0_6rem] grid grid-cols-2 p-[0_8rem_4rem] bg-[#fbfcff]
+    @apply max-[1210px]: grid-cols-1 max-[1210px]:gap-[4rem] max-[1290px]:p-[0_6rem] grid grid-cols-2 p-[0_8rem_4rem] bg-[#fbfcff]
   }
 
-  .features-section .content, .features-section .title {
-    @apply max-[1210px]:p-[2rem_4rem]
+  .features-section .content,
+  .features-section .title {
+    @apply max-[1210px]: p-[2rem_4rem]
   }
 
   .features-section .content .left {
-    @apply max-[1210px]:gap-[2rem] grid grid-cols-2 justify-center items-center relative
+    @apply max-[1210px]: gap-[2rem] grid grid-cols-2 justify-center items-center relative
   }
 
   .features-section .content .left .feature-background {
-    @apply max-[650px]:text-[5rem] max-[1000px]:text-[6rem] font-extrabold text-[6.8rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1] 
+    @apply max-[650px]: text-[5rem] max-[1000px]:text-[6rem] font-extrabold text-[6.8rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1]
   }
 
   .features-section .content .left div {
-    @apply max-[1210px]:w-full w-[70%] z-[2]
+    @apply max-[1210px]: w-full w-[70%] z-[2]
   }
 
   .features-section .content .left h3 {
-    @apply font-semibold text-[1.125rem] leading-[20px] tracking-[.03em] text-[#212121] mb-4 
+    @apply font-semibold text-[1.125rem] leading-[20px] tracking-[.03em] text-[#212121] mb-4
   }
 
   .features-section .content .left p {
@@ -319,20 +328,28 @@
     @apply font-light text-[1rem] leading-[26px] text-justify text-[#212121]
   }
 
+  .btn {
+    @apply font-semibold leading-[18px] bg-[#212121] p-[10px_0] flex items-center justify-center gap-2 text-white
+  }
+
+  .add-to-cart .btn {
+    @apply text-[.875rem] w-[40%]
+  }
+
   .features-section .btn {
-    @apply text-[.875rem] w-[50%] font-semibold leading-[18px] bg-[#212121] py-[10px] px-0 flex items-center justify-center gap-2 text-[#fff]
+    @apply text-[.875rem] w-[50%] font-semibold leading-[18px] bg-[#212121] py-[10px] px-0 flex items-center justify-center gap-2 text-white
   }
 
   .newsletter {
-    @apply max-[650px]:py-[6rem_2rem] max-[1210px]:p-[6rem_4rem] p-[10rem_8rem] flex flex-col justify-center items-center text-center relative z-[1]
+    @apply max-[650px]: py-[6rem_2rem] max-max-[1210px]:p-[6rem_4rem] p-[10rem_8rem] flex flex-col justify-center items-center text-center relative z-[1]
   }
 
   .newsletter-background {
-    @apply max-[650px]:text-[4rem] max-[1000px]:text-[6.2rem] font-extrabold text-[7.5rem] leading-[151px] text-[#f2f3f7] absolute z-[-1] 
+    @apply max-[650px]: text-[4rem] max-[1000px]:text-[6.2rem] font-extrabold text-[7.5rem] leading-[151px] text-[#f2f3f7] absolute z-[-1]
   }
 
   .newsletter h1 {
-    @apply max-[650px]:mb-[.5rem] max-[650px]:text-[1.8rem] mb-4 font-bold text-[2rem] leading-[40px] tracking-[.03em] text-[#212121]
+    @apply max-[650px]: mb-[.5rem] max-[650px]:text-[1.8rem] mb-4 font-bold text-[2rem] leading-[40px] tracking-[.03em] text-[#212121]
   }
 
   .newsletter p {
@@ -341,30 +358,33 @@
 
 
   .newsletter input {
-    @apply p-[6px_116px_6px_16px] bg-[#fcfcfc] border-[1px] border-gray-500 
+    @apply p-[6px_116px_6px_16px] bg-[#fcfcfc] border-[1px] border-gray-500
   }
 
   .newsletter button {
-    @apply max-[1000px]:p-[10px_40px] p-[10px_20px] ml-[10px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
+    @apply max-[1000px]: p-[10px_40px] p-[10px_20px] ml-[10px] bg-[#000] text-white font-semibold text-[.9rem] leading-[16px]
   }
 
-  .footer, .event-container, .products-outer-container {
-    @apply max-[650px]:py-[4rem_2rem] max-[1210px]:p-[4rem] max-[1290px]:p-[2rem_6rem] p-[4rem_8rem]
+  .footer,
+  .event-container,
+  .products-outer-container {
+    @apply max-[650px]: py-[4rem_2rem] max-[1210px]:p-[4rem] max-[1290px]:p-[2rem_6rem] p-[4rem_8rem]
   }
 
   .footer {
-    @apply max-[1000px]:grid-cols-1 max-[1000px]:gap-[2rem] grid grid-cols-[2fr_1fr_1fr_1fr]
+    @apply max-[1000px]: grid-cols-1 max-[1000px]:gap-[2rem] grid grid-cols-[2fr_1fr_1fr_1fr]
   }
 
   .footer .logo {
-    @apply max-[1000px]:gap-[2rem] max-[1000px]:w-full flex flex-col justify-between w-[80%]
+    @apply max-[1000px]: gap-[2rem] max-[1000px]:w-full flex flex-col justify-between w-[80%]
   }
 
   .footer .logo p {
-    @apply max-[1000px]:w-[60%]
+    @apply max-[1000px]: w-[60%]
   }
 
-  .footer li, .footer p {
+  .footer li,
+  .footer p {
     @apply font-normal text-[1rem] leading-[22px] text-[#666]
   }
 
@@ -381,35 +401,43 @@
   }
 
   .footer li {
-    @apply first:mt-[25px] mt-[15px]
+    @apply first: mt-[25px] mt-[15px]
   }
 
-  .footer li, .footer p {
+  .footer li,
+  .footer p {
     @apply font-normal text-base leading-[22px] text-[#666]
   }
 
-  .cart, .size li, button, .footer li, nav li {
+  .cart,
+  .size li,
+  button,
+  .footer li,
+  nav li {
     @apply list-none cursor-pointer
   }
 
   .copyright {
-    @apply mt-24 border-t-[1px] border-solid border-[#666] grid grid-cols-[auto_auto_auto] max-[650px]:grid-cols-1 max-[1000px]:mt-0 max-[1000px]:grid-cols-2
+    @apply mt-24 border-t-[1px] border-solid border-[#666] grid grid-cols-[auto_auto_auto] max-[650px]: grid-cols-1 max-[1000px]:mt-0 max-[1000px]:grid-cols-2
   }
 
   .copyright p {
-    @apply m-[1.5rem_8rem] max-[1000px]:m-[0.8rem_2rem]
+    @apply m-[1.5rem_8rem] max-[1000px]: m-[0.8rem_2rem]
   }
 
   .copyright span {
     @apply font-bold text-base leading-[15px] text-[#212121]
   }
 
-  .Allproducts-container, .cart-wrapper, .header, .success {
-    @apply m-[4rem_8rem] max-[1210px]:m-[4rem] max-[1290px]:m-[4rem_6rem]
+  .Allproducts-container,
+  .cart-wrapper,
+  .header,
+  .success {
+    @apply m-[4rem_8rem] max-[1210px]: m-[4rem] max-[1290px]:m-[4rem_6rem]
   }
 
   .Allproducts-container {
-    @apply max-[1000px]:grid-cols-2 max-[1290px]:grid-cols-3 grid grid-cols-4 justify-between items-center gap-[2rem]
+    @apply max-[1000px]: grid-cols-2 max-[1290px]:grid-cols-3 grid grid-cols-4 justify-between items-center gap-[2rem]
   }
 
   .Allproduct-card {
@@ -424,7 +452,8 @@
     @apply text-[1.05rem] mt-2
   }
 
-  .Allproduct-name, .Allproduct-price {
+  .Allproduct-name,
+  .Allproduct-price {
     @apply font-semibold leading-6 tracking-[0.03em] text-[#212121]
   }
 
@@ -435,5 +464,18 @@
   .Allproduct-price {
     @apply text-xl mt-4
   }
+
+  .features-section .title,
+  .product-desc-container,
+  .products {
+    @apply max-[650px]:p-8
+  }
+
+  /* .event-container,
+  .footer,
+  .products,
+  .products-outer-container {
+    @apply max-[1210px]:
+  } */
 
 }

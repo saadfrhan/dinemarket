@@ -4,19 +4,23 @@ module.exports = {
   content: [
     './src/pages/**/*.{ts,tsx}',
     './src/components/**/*.{ts,tsx}',
-    './src/app/**/*.{ts,tsx}',
-	],
-  screens: {
-    '<1000': ""
-  },
+    './src/app/**/*.{ts,tsx}'
+  ],
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1400px"
       },
     },
+    screens: {
+      'sm-450': { max: '450px' },
+      'md-650': { max: '650px' },
+      'lg-1k': { max: '1000px' },
+      'xl-12': { max: '1210px' },
+      '2xl-12p': { max: '1290px' }
+    }
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -53,12 +57,9 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      aspectRatio: {
-        logo: "auto 140/25"
-      },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {

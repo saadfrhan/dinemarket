@@ -9,7 +9,7 @@ function Logo({
 }) {
   return (<>
   {show && <Link href="/">
-    <Image src={LogoImage} alt="Dine Market" height="100" width="100" className="w-[140px] aspect-logo h-[25px]" />
+    <Image src={LogoImage} alt="Dine Market" height={25} width={140} />
   </Link>}
   </>)
 }

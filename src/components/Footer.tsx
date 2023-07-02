@@ -54,8 +54,8 @@ function Footer() {
           Design by. <span>Weird Design Studio</span>
         </p>
         <p>
-          Code by.
-          <span><a href="https://github.com/saadfrhan/nextjs-marketplace">saadfrhan</a> on github</span>
+          Code by. 
+          <span><a href="https://github.com/saadfrhan/nextjs-marketplace"> saadfrhan</a> on github</span>
         </p>
       </div>
       </footer>
