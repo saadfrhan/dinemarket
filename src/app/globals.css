@@ -545,7 +545,7 @@
     @apply gap-8
   }
 
-  .quantity-desc div, .quantity-desc {
+  .quantity-desc div, .quantity-desc, .price-and-qty div, .price-and-qty {
     @apply flex items-center 
   }
 
@@ -642,11 +642,11 @@
   }
 
   .item-tag {
-    @apply leading-[16px] text-[#666]
+    @apply leading-[16px] text-[#666] font-semibold
   }
 
-  .delivery-days, .delivery-est, .item-tag {
-    @apply font-semibold text-xs leading-[22px] text-[#212121]
+  .delivery-days, .delivery-est {
+    @apply font-semibold text-base leading-[22px] text-[#212121]
   }
 
   .delivery-days {
@@ -671,5 +671,13 @@
 
   .order-summary .btn {
     @apply w-full
+  }
+
+  .cart-wrapper h2 {
+    @apply text-[1.5rem] font-bold
+  }
+
+  .order-summary h3 {
+    @apply font-bold text-[1.2rem]
   }
 }
