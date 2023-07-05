@@ -597,4 +597,79 @@
     @apply font-semibold list-inside
   }
 
+  .cart-wrapper {
+    @apply max-lg-1k:p-0 max-xl-12:m-16 max-2xl-12p:m-[4rem_6rem] p-12
+  }
+
+  .cart-container {
+    @apply max-lg-1k:flex-col flex justify-between gap-16
+  }
+
+  .cart-items {
+    @apply mt-8 gap-16 flex-[3_1]
+  }
+
+  .empty-cart, .cart-items {
+    @apply flex flex-col
+  }
+
+  .item-card {
+    @apply max-md-650:flex-col flex gap-8
+  }
+
+  .item-image {
+    @apply max-sm-450:w-4/5 max-sm-450:h-1/5 max-lg-1k:w-1/2 max-lg-1k:h-[10%] w-1/4 h-[190px] rounded-[9px]
+  }
+
+  .item-image img {
+    @apply w-full h-full rounded-[9px]
+  }
+
+  .item-details {
+    @apply max-lg-1k:w-full max-lg-1k:gap-2 flex flex-col justify-between w-3/4
+  }
+
+  .name-and-remove {
+    @apply flex justify-between
+  }
+
+  .item-details h3 {
+    @apply font-light text-[1.3rem] leading-[25px] text-[#212121]
+  }
+
+  .remove-item {
+    @apply bg-transparent border-none
+  }
+
+  .item-tag {
+    @apply leading-[16px] text-[#666]
+  }
+
+  .delivery-days, .delivery-est, .item-tag {
+    @apply font-semibold text-xs leading-[22px] text-[#212121]
+  }
+
+  .delivery-days {
+    @apply text-[#ffc700]
+  }
+
+  .price-and-qty {
+    @apply flex justify-between
+  }
+
+  .price-and-qty .price {
+    @apply font-bold text-[1.1rem] leading-5 tracking-widest text-[#212121]
+  }
+
+  .order-summary {
+    @apply p-8 bg-[#fbfcff] flex flex-col flex-1 gap-8
+  }
+
+  .order-summary div {
+    @apply flex justify-between gap-16 
+  }
+
+  .order-summary .btn {
+    @apply w-full
+  }
 }
