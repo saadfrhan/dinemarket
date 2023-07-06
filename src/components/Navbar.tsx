@@ -17,7 +17,7 @@ function Navbar() {
         
         max-[1210px]:m-[2rem]
 
-        mt-[2rem] mb-[0rem] mx-[8rem]
+        mt-[2rem] mb-[0rem] mx-[6rem]
     '>
     <div className="flex justify-between items-center w-full m-auto">
       <Logo />
@@ -32,7 +32,7 @@ function Navbar() {
 function MobileNavbar() {
   const [showOverlay, setShowOverlay] = useState(false);
   return (
-    <div className={`nav_mobile-box`}>
+    <div className={`nav-mobile-box`}>
 
       <div className={`
         ${showOverlay && `h-screen flex flex-col bg-white items-center justify-center fixed top-0 left-0 w-full z-[3]`}
