@@ -12,7 +12,6 @@ async function Products({
 
   const products = await getProducts(params.category);
   
-
   return (
     <div className='Allproducts-container'>
         {products.map((product: any, index: any) => (

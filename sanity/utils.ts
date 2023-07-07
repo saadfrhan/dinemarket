@@ -1,19 +1,9 @@
-// const neededData = `{
-//     name,
-//     tags,
-//     price,
-//     image,
-//     slug
-//   }`
-//   const _category = category === "female" ? "Female" : "Male";
-//   const allProducts = `*[_type == "product"]${neededData}`
-//   const query = category === "all" ? allProducts : `*[category == "${_category}"]${neededData}`;
-
-import { ProductCardI } from "@/types";
+import { MoreProdInfoI, ProductCardI } from "@/types";
 import { client } from "./lib/client";
 import { groq } from "next-sanity";
 
 const neededDataForProducts = `{
+    _id,
     name,
     tags,
     price,
@@ -21,7 +11,7 @@ const neededDataForProducts = `{
     "slug": slug.current
 }`
 
-export async function getProducts(category: "male" | "female" | "all"): Promise<ProductCardI[]> {
+export async function getProducts(category: "male" | "female" | "kids" | "all"): Promise<ProductCardI[]> {
     if (category === "all") {
         return client.fetch(
             groq`*[_type == "product"]${neededDataForProducts}`
@@ -29,7 +19,8 @@ export async function getProducts(category: "male" | "female" | "all"): Promise<
     } else {
         const _category = {
             "male": "Male",
-            "female": "Female"
+            "female": "Female",
+            "kids": "Kids"
         }
         return client.fetch(
             groq`*[category == "${_category[category]}"]${neededDataForProducts}`
@@ -37,3 +28,8 @@ export async function getProducts(category: "male" | "female" | "all"): Promise<
     }
 }
 
+export async function getProduct(slug: string): Promise<ProductCardI & MoreProdInfoI> {
+    const query = groq`*[_type == "product" && slug.current == '${slug}'][0]`;
+    const product = await client.fetch(query);
+    return product;
+} 

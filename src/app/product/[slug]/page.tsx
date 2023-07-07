@@ -1,65 +1,35 @@
-import { MinusIcon, PlusIcon, ShoppingCart } from 'lucide-react'
 import React from 'react'
-import ProductTwo from '/public/big.png';
-import Image from 'next/image';
+import { getProduct } from '../../../../sanity/utils';
+import ProductImage from '@/components/ProductImage';
+import ProductDetails from '@/components/ProductDetails';
 
+export default async function ProductPage({
+  params: {
+    slug
+  }
+}: {
+  params: {
+    slug: string;
+  }
+}) {
 
-export default function page() {
+  const { image, name, price, tags, care, details, _id } = await getProduct(slug);
+
+  const careList = [];
+
+  {
+    for (let i = 0; i < care.length; i++) {
+      careList.push(care[i].children[0].text)
+    }
+  }
+
   return <div className="products">
 
     <div className="product-detail-container">
 
-      <div className="product-images">
-        <div className="small-images-container">
-          <Image src={ProductTwo} alt="somethin truly special" />
-        </div>
-        <div className="big-image-container">
-          <Image src={ProductTwo} alt="somethin truly special" />
-        </div>
-      </div>
+      <ProductImage image={image} name={name} />
 
-      <div className="product-details">
-
-        <div className="name-and-category">
-          <h3>Cameryn Sash Tie Dress</h3>
-          <span>Dress</span>
-        </div>
-
-        <div className="size">
-          <p>SELECT SIZE</p>
-          <ul>
-            <li>XS</li>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-            <li>XL</li>
-          </ul>
-        </div>
-
-        <div className="quantity-desc">
-          <h4>Quantity:</h4>
-          <div>
-            <span className="minus">
-              <MinusIcon />
-            </span>
-            <span className="num">1</span>
-            <span className="plus">
-              <PlusIcon />
-            </span>
-          </div>
-        </div>
-
-        <div className="add-to-cart">
-          <button className="btn">
-            <ShoppingCart height={20} width={20} /> Add to Cart
-          </button>
-
-          <p className="price">
-            $545.00
-          </p>
-        </div>
-
-      </div>
+      <ProductDetails _id={_id} name={name} tags={tags} price={price} />
 
     </div>
 
@@ -72,14 +42,14 @@ export default function page() {
       </div>
       <div className='desc-details'>
         <h4>PRODUCT DETAILS</h4>
-        {/* <p>{details[0].children[0].text}</p> */}
+        <p>{details[0].children[0].text}</p>
       </div>
       <div className='desc-care'>
         <h4>PRODUCT CARE</h4>
         <ul>
-          {/* {careList.map(list => (
+          {careList.map(list => (
             <li>{list}</li>
-          ))} */}
+          ))}
         </ul>
       </div>
     </div>

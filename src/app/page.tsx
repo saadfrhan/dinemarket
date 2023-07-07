@@ -23,7 +23,7 @@ import ProductFour from '/public/TrendProduct4.png';
 import ProductFive from '/public/TrendProduct5.png';
 import ProductSix from '/public/TrendProduct6.png';
 
-import { Navigation, A11y } from 'swiper';
+import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles

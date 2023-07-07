@@ -427,15 +427,15 @@
   }
 
   .Allproducts-container {
-    @apply max-md-650:grid-cols-1 max-lg-1k:grid-cols-2 max-2xl-12p:grid-cols-3 grid grid-cols-4 justify-between items-center gap-x-[4rem] gap-y-[4rem]
+    @apply max-md-650:grid-cols-1 max-lg-1k:grid-cols-2 max-2xl-12p:grid-cols-3 grid grid-cols-4 justify-between items-center gap-x-[2rem] gap-y-[6rem]
   }
 
   .Allproduct-card {
-    @apply w-[300px]
+    @apply lg-1k:w-[300px] w-full h-full
   }
 
   .Allproduct-card img {
-    @apply w-full h-full
+    @apply xl-12:w-[80%] xl-12:h-[80%] w-full h-full
   }
 
   .Allproduct-name {
