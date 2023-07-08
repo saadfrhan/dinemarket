@@ -9,7 +9,7 @@ export default function ProductDetails({
 }: {
     _id: string; name: string; tags: string; price: number;
 }) {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     function handleQuantityChange(
         change: 'increase' | 'decrease'
     ) {
@@ -55,7 +55,7 @@ export default function ProductDetails({
                 </div>
             </div>
 
-            <AddToCart _id={_id} price={price} quantity={quantity} />
+            <AddToCart _id={_id} price={price} quantity={quantity} name={name} />
 
         </div>
     )

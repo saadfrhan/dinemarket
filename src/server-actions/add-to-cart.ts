@@ -4,23 +4,24 @@ import { cookies } from 'next/headers';
 import { cartItemsTable, cartTable, db } from '../lib/drizzle';
 import { and, eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
-import { v4 as uuid } from 'uuid';
+import crypto from 'crypto'
 
 export async function addToCart({ product_id, quantity }: {
     product_id: string,
     quantity: number
 }) {
+
     const setCookies = cookies();
-    const user_id = setCookies.get('user_id')?.value as string
+    const getUserId = setCookies.get('user_id')?.value;
+    const user_id = Number(getUserId)
 
     console.log('user_id:', user_id);
 
     if (!user_id) {
         // @ts-ignore
-        setCookies.set('user_id', uuid());
-        console.log('user_id generated:', setCookies.get('user_id')?.value);
+        setCookies.set('user_id', crypto.randomInt(1, 1000000));
+        console.log('user_id generated:', getUserId);
     }
-
     try {
         // Check if a cart already exists for the user
         const existingCart = await db
@@ -30,20 +31,25 @@ export async function addToCart({ product_id, quantity }: {
             .limit(1);
 
         let cartId = 0;
+        let itemsCount = 0;
 
-        if (existingCart) {
+        if (existingCart.length !== 0) {
             // If cart exists, use existing cart's ID
             cartId = existingCart[0].id;
             console.log('existing cart:', existingCart[0]);
+            itemsCount = existingCart[0].items_count!;
         } else {
             // Create a new cart and use its ID
             const [{ id }] = await db
                 .insert(cartTable)
                 .values({ user_id })
                 .returning();
+
             cartId = id;
+
             console.log('new cart created. cart ID:', cartId);
         }
+
 
         // Check if the product already exists in the cart
         const existingCartItem = await db
@@ -55,14 +61,20 @@ export async function addToCart({ product_id, quantity }: {
             )
             .limit(1);
 
-        if (existingCartItem) {
+        if (existingCartItem.length !== 0) {
+
             // If the item exists, update the quantity
             await db
                 .update(cartItemsTable)
                 .set({ quantity: existingCartItem[0].quantity + quantity })
                 .where(eq(cartItemsTable.id, existingCartItem[0].id));
 
+            await db
+                .update(cartTable)
+                .set({ items_count: itemsCount + quantity })
+
             console.log("Existing item quantity updated in the cart.");
+
         } else {
             // Insert the new item into the cart
             await db
@@ -72,6 +84,10 @@ export async function addToCart({ product_id, quantity }: {
                     product_id,
                     quantity
                 });
+
+            await db
+                .update(cartTable)
+                .set({ items_count: itemsCount + quantity })
 
             console.log("New item added to the cart.");
         }
