@@ -85,7 +85,7 @@
   }
 
   .nav-mobile-box {
-    @apply max-md-650:mx-[2rem] max-md-650:mt-[2rem] max-lg-1k:mx-[4rem] max-lg-1k:mt-[4rem] max-xl-12:mx-[2rem] max-xl-12:mt-[2rem]
+    @apply lg-1k:hidden max-md-650:mx-[2rem] max-md-650:mt-[2rem] max-lg-1k:mx-[4rem] max-lg-1k:mt-[4rem] max-xl-12:mx-[2rem] max-xl-12:mt-[2rem]
   }
 
   .header {
@@ -679,5 +679,13 @@
 
   .order-summary h3 {
     @apply font-bold text-[1.2rem]
+  }
+
+  .empty-cart {
+    @apply flex justify-center items-center flex-col gap-2 
+  }
+
+  .empty-cart h1 {
+    @apply text-3xl font-extrabold
   }
 }

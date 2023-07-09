@@ -1,59 +1,76 @@
-import Image from 'next/image'
-import React from 'react'
-import ProductTwo from '/public/big.png';
-import { MinusIcon, PlusIcon, Trash2Icon } from 'lucide-react';
+import ItemCard from "@/components/ItemCard";
+import { domain } from "@/constants";
+import { cookies } from "next/headers";
+import { getProductsByIds } from "../../../sanity/utils";
+import { urlForImage } from "../../../sanity/lib/image";
+import { ShoppingBag } from "lucide-react";
 
-export default function Cart() {
+async function getUserCart() {
+  try {
+    const response = await fetch(`${domain[process.env.NODE_ENV]}/api/cart`, {
+      headers: {
+        Cookie: cookies().toString()
+      }
+    });
+    return await response.json()
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export default async function Cart() {
+  const { products, cartId }: {
+    products: {
+      product_id: string,
+      quantity: number
+    }[],
+    cartId: number;
+  } = await getUserCart();
+
+  const _products = products ? await getProductsByIds(products.map(d => d.product_id)) : [];
+
+  const quantity = products ? products.map(p => p.quantity).reduce((a, b) => a + b, 0) : 0;
+  const subtotal = _products ? _products.filter((p, index) => p._id === products[index].product_id).map((p, index) => p.price * products[index].quantity).reduce((a,b) => a + b, 0) : 0
+
   return (
     <div className="cart-wrapper">
       <h2>Shopping Cart</h2>
       <div className="cart-container">
         <div className="cart-items">
-          <div className="item-card">
-            <div className="item-image">
-              <Image src={ProductTwo} alt="somethin truly special" />
+          {_products.length > 0 && _products.map((p, index) => (
+            <ItemCard
+              imageUrl={urlForImage(p.image && p.image[0]).url()}
+              name={p.name}
+              price={p.price}
+              _id={p._id}
+              quantity={products[index].quantity}
+              tags={p.tags}
+              cartId={cartId}
+            />
+          ))}
+          {_products.length === 0 && (
+            <div className="empty-cart">
+              <ShoppingBag size={150} />
+              <h1>Your shopping bag is empty</h1>
             </div>
-            <div className="item-details">
-              <div className="name-and-remove">
-                <h3>Flex Sweatpants</h3>
-                <button className="remove-item">
-                  <Trash2Icon width={28} height={28} />
-                </button>
-              </div>
-              <p className="item-tag">Dress</p>
-              <p className="delivery-est">Delivery Estimation</p>
-              <p className="delivery-days">5 Working Days</p>
-              <div className="price-and-qty">
-                <span className="price">$145</span>
-                <div>
-                  <span className="minus">
-                    <MinusIcon />
-                  </span>
-                  <span className="num">1</span>
-                  <span className="plus">
-                    <PlusIcon />
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
-        <div className="order-summary">
+        {_products.length > 0 && <div className="order-summary">
           <h3>Order Summary</h3>
           <div className="qty">
             <p>Quantity</p>
-            <span>1 Product</span>
+            <span>{quantity} {quantity > 1 ? " Products" : " Product"}</span>
           </div>
           <div className="subtotal">
             <p>Sub Total</p>
-            <span>$ 175</span>
+            <span>$ {subtotal}</span>
           </div>
           <div>
             <button className="btn">
               Proceed to Checkout
             </button>
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   )

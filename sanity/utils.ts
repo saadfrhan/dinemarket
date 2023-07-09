@@ -28,8 +28,21 @@ export async function getProducts(category: "male" | "female" | "kids" | "all"):
     }
 }
 
-export async function getProduct(slug: string): Promise<ProductCardI & MoreProdInfoI> {
+export async function getProductBySlug(slug: string): Promise<ProductCardI & MoreProdInfoI> {
     const query = groq`*[_type == "product" && slug.current == '${slug}'][0]`;
     const product = await client.fetch(query);
     return product;
 } 
+
+export async function getProductsByIds(ids: string[]): Promise<(ProductCardI & MoreProdInfoI)[]> {
+    const query = groq`*[_type == "product" && _id in ${JSON.stringify(ids)}]{
+        _id,
+        name,
+        tags, 
+        price,
+        image,
+    }`;
+    const product = await client.fetch(query);
+    return product;
+} 
+

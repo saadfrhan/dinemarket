@@ -6,6 +6,8 @@ import { NextResponse } from "next/server";
 export async function GET() {
     const cookie = cookies();
     const getUserId = cookie.get('user_id')?.value; 
+    console.log(getUserId);
+    
     
     if (!getUserId) {
         return NextResponse.json({
@@ -14,7 +16,7 @@ export async function GET() {
     } else {
         const [{ items_count }] = await db.select({
             items_count: cartTable.items_count
-        }).from(cartTable).where(eq(cartTable.user_id, Number(cookie.get('user_id'))))
+        }).from(cartTable).where(eq(cartTable.user_id, Number(getUserId)))
         return NextResponse.json({ items_count })
     }
 }

@@ -21,7 +21,9 @@ export default function AddToCart({
               product_id: _id,
               quantity
             })
-            toast.success(`${quantity}x ${name} has been added to your cart.`)
+            toast.success(`${quantity}x ${name} has been added to your cart.`, {
+              duration: 5000
+            })
           }
         );
       }}>

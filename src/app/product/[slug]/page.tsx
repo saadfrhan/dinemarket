@@ -1,5 +1,5 @@
 import React from 'react'
-import { getProduct } from '../../../../sanity/utils';
+import { getProductBySlug } from '../../../../sanity/utils';
 import ProductImage from '@/components/ProductImage';
 import ProductDetails from '@/components/ProductDetails';
 
@@ -13,7 +13,7 @@ export default async function ProductPage({
   }
 }) {
 
-  const { image, name, price, tags, care, details, _id } = await getProduct(slug);
+  const { image, name, price, tags, care, details, _id } = await getProductBySlug(slug);
 
   const careList = [];
 
