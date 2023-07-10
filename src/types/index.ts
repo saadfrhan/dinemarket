@@ -1,3 +1,5 @@
+import { Dispatch } from "react";
+
 export interface ProductCardI {
     _id: string;
     name: string;
@@ -16,12 +18,4 @@ export interface ArrayChildren {
     children: [
         { text: string; }
      ]
-}
-
-export interface IInitialState {
-    showCart: boolean;
-    cartItems: (ProductCardI & MoreProdInfoI)[];
-    totalPrice: number;
-    totalQty: number;
-    qty: number;
 }

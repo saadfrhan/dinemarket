@@ -4,75 +4,75 @@
 
 @layer base {
   :root {
-    --background:0 0% 100%;
-    --foreground:222.2 47.4% 11.2%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
 
-    --muted:210 40% 96.1%;
-    --muted-foreground:215.4 16.3% 46.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --popover:0 0% 100%;
-    --popover-foreground:222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
 
-    --card:0 0% 100%;
-    --card-foreground:222.2 47.4% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
 
-    --border:214.3 31.8% 91.4%;
-    --input:214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
 
-    --primary:222.2 47.4% 11.2%;
-    --primary-foreground:210 40% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary:210 40% 96.1%;
-    --secondary-foreground:222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --accent:210 40% 96.1%;
-    --accent-foreground:222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive:0 100% 50%;
-    --destructive-foreground:210 40% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
 
-    --ring:215 20.2% 65.1%;
+    --ring: 215 20.2% 65.1%;
 
-    --radius:0.5rem;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background:224 71% 4%;
-    --foreground:213 31% 91%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    --muted:223 47% 11%;
-    --muted-foreground:215.4 16.3% 56.9%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
 
-    --popover:224 71% 4%;
-    --popover-foreground:215 20.2% 65.1%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
 
-    --card:224 71% 4%;
-    --card-foreground:213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --border:216 34% 17%;
-    --input:216 34% 17%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
 
-    --primary:210 40% 98%;
-    --primary-foreground:222.2 47.4% 1.2%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
 
-    --secondary:222.2 47.4% 11.2%;
-    --secondary-foreground:210 40% 98%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
 
-    --accent:216 34% 17%;
-    --accent-foreground:210 40% 98%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive:0 63% 31%;
-    --destructive-foreground:210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --ring:216 34% 17%;
+    --ring: 216 34% 17%;
 
-    --radius:0.5rem;
+    --radius: 0.5rem;
   }
 }
 
 @layer base {
   * {
-    @apply border-border box-border p-0 m-0;
+    @apply border-border box-border p-0 m-0 border-2 border-red-600;
   }
 
   img {
@@ -81,11 +81,12 @@
 
   body {
     @apply bg-background text-foreground overflow-x-hidden max-w-full;
-    font-feature-settings:"rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   .nav-mobile-box {
-    @apply lg-1k:hidden max-md-650:mx-[2rem] max-md-650:mt-[2rem] max-lg-1k:mx-[4rem] max-lg-1k:mt-[4rem] max-xl-12:mx-[2rem] max-xl-12:mt-[2rem]
+    @apply 
+    lg-1k:hidden
   }
 
   .header {
@@ -185,7 +186,7 @@
   }
 
   .event-banner-left {
-    @apply max-[450px]:flex-col max-md-650:pt-8 max-lg-1k:pt-0
+    @apply max-sm-450:flex-col max-md-650:pt-8 max-lg-1k:pt-0
   }
 
   .event-card:last-child h3 {
@@ -299,7 +300,7 @@
   }
 
   .features-section .content .left .feature-background {
-    @apply max-md-650:text-[5rem] max-lg-1k:text-[6rem] font-extrabold text-[6.8rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1]
+    @apply max-sm-450:text-[4rem] max-md-650:text-[5rem] max-lg-1k:text-[6rem] font-extrabold text-[6.8rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1]
   }
 
   .features-section .content .left div {
@@ -315,7 +316,7 @@
   }
 
   .features-section .content .right {
-    @apply flex justify-center items-center gap-8
+    @apply flex justify-center items-center gap-8 max-lg-1k:flex-col
   }
 
   .features-section .content .right div {
@@ -423,7 +424,7 @@
   .cart-wrapper,
   .header,
   .success {
-    @apply m-[4rem_8rem] max-xl-12:m-[4rem] max-2xl-12p:m-[4rem_6rem]
+    @apply m-[4rem] max-xl-12:m-[2rem] max-2xl-12p:m-[4rem_6rem]
   }
 
   .Allproducts-container {
@@ -530,7 +531,7 @@
   }
 
   .add-to-cart {
-    @apply flex items-center gap-4 
+    @apply flex items-center gap-4
   }
 
   .add-to-cart .price {
@@ -545,8 +546,11 @@
     @apply gap-8
   }
 
-  .quantity-desc div, .quantity-desc, .price-and-qty div, .price-and-qty {
-    @apply flex items-center 
+  .quantity-desc div,
+  .quantity-desc,
+  .price-and-qty div,
+  .price-and-qty {
+    @apply flex items-center
   }
 
   .quantity-desc h4 {
@@ -577,7 +581,8 @@
     @apply font-bold text-[1.4rem] leading-[25px] tracking-wider text-[#212121] pb-12 z-[2] top-[45%] absolute
   }
 
-  .desc-care, .desc-details {
+  .desc-care,
+  .desc-details {
     @apply max-sm-450:flex max-sm-450:flex-col max-sm-450:gap-8
   }
 
@@ -585,11 +590,13 @@
     @apply flex-1 font-bold text-[1rem] leading-[19px] tracking-wider text-[#666]
   }
 
-  .product-desc-container p, .product-desc-container ul {
+  .product-desc-container p,
+  .product-desc-container ul {
     @apply flex-[2_1]
   }
 
-  .product-desc-container li, .product-desc-container p {
+  .product-desc-container li,
+  .product-desc-container p {
     @apply font-light text-[1rem] leading-[26px] text-justify tracking-wider text-[#212121]
   }
 
@@ -598,7 +605,7 @@
   }
 
   .cart-wrapper {
-    @apply max-lg-1k:p-0 max-xl-12:m-16 max-2xl-12p:m-[4rem_6rem] p-12
+    @apply max-lg-1k:p-0 max-xl-12:m-4 max-2xl-12p:m-[4rem_6rem] p-12
   }
 
   .cart-container {
@@ -609,12 +616,13 @@
     @apply mt-8 gap-16 flex-[3_1]
   }
 
-  .empty-cart, .cart-items {
+  .empty-cart,
+  .cart-items {
     @apply flex flex-col
   }
 
   .item-card {
-    @apply max-md-650:flex-col flex gap-8
+    @apply max-md-650:flex-col flex gap-2
   }
 
   .item-image {
@@ -622,7 +630,7 @@
   }
 
   .item-image img {
-    @apply w-full h-full rounded-[9px]
+    @apply w-full h-auto rounded-[9px]
   }
 
   .item-details {
@@ -645,7 +653,8 @@
     @apply leading-[16px] text-[#666] font-semibold
   }
 
-  .delivery-days, .delivery-est {
+  .delivery-days,
+  .delivery-est {
     @apply font-semibold text-base leading-[22px] text-[#212121]
   }
 
@@ -662,11 +671,11 @@
   }
 
   .order-summary {
-    @apply p-8 bg-[#fbfcff] flex flex-col flex-1 gap-8
+    @apply p-4 bg-[#fbfcff] flex flex-col flex-1 gap-8 w-full
   }
 
   .order-summary div {
-    @apply flex justify-between gap-16 
+    @apply flex justify-between gap-16
   }
 
   .order-summary .btn {
@@ -682,10 +691,36 @@
   }
 
   .empty-cart {
-    @apply flex justify-center items-center flex-col gap-2 
+    @apply flex justify-center items-center flex-col gap-2
   }
 
   .empty-cart h1 {
     @apply text-3xl font-extrabold
+  }
+
+  .success, .canceled {
+    @apply p-[6rem_0] bg-[#f1f1f1] flex flex-col justify-center items-center text-center rounded-[15px]
+  }
+
+  .success h1,
+  .canceled h1 {
+    @apply text-[2.75rem] m-[0.5rem_0]
+  }
+
+  .success .btn,
+  .canceled .btn {
+    @apply p-[15px] w-[400px] text-[1.125rem] rounded-[10px]
+  }
+
+  .success .description,
+  .success button,
+  .canceled .description,
+  .canceled button {
+    @apply mt-8
+  }
+
+  .success .description a,
+  .canceled .description a {
+    @apply ml-[5px] text-red-600
   }
 }

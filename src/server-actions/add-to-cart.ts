@@ -4,16 +4,21 @@ import { cookies } from 'next/headers';
 import { cartItemsTable, cartTable, db } from '../lib/drizzle';
 import { and, eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
-import crypto from 'crypto'
+import crypto from 'crypto';
 
 export async function addToCart({ product_id, quantity }: {
     product_id: string,
     quantity: number
 }) {
 
+    console.log({
+        product_id, quantity
+    });
+
+
     const setCookies = cookies();
     const getUserId = setCookies.get('user_id')?.value;
-    const user_id = Number(getUserId)
+    const user_id = Number(getUserId);
 
     console.log('user_id:', user_id);
 
@@ -62,20 +67,36 @@ export async function addToCart({ product_id, quantity }: {
             .limit(1);
 
         if (existingCartItem.length !== 0) {
+            console.log('existing cart item:', existingCartItem[0]);
+
+            // Calculate the difference between the new quantity and the existing quantity
+            const quantityDifference = existingCartItem[0].quantity > quantity ?
+                existingCartItem[0].quantity - quantity : quantity - existingCartItem[0].quantity
+                ;
+
 
             // If the item exists, update the quantity
             await db
                 .update(cartItemsTable)
-                .set({ quantity: existingCartItem[0].quantity + quantity })
+                .set({ quantity })
                 .where(eq(cartItemsTable.id, existingCartItem[0].id));
 
             await db
                 .update(cartTable)
-                .set({ items_count: itemsCount + quantity })
+                .set({ items_count: itemsCount + quantityDifference })
+                .where(eq(cartTable.user_id, user_id));
+
+            console.log(`Updated cart: ${JSON.stringify(await db
+                .select()
+                .from(cartTable)
+                .where(eq(cartTable.user_id, user_id))
+                .limit(1))}`);
 
             console.log("Existing item quantity updated in the cart.");
 
         } else {
+            console.log('new cart item');
+
             // Insert the new item into the cart
             await db
                 .insert(cartItemsTable)
@@ -87,7 +108,7 @@ export async function addToCart({ product_id, quantity }: {
 
             await db
                 .update(cartTable)
-                .set({ items_count: itemsCount + quantity })
+                .set({ items_count: itemsCount + quantity });
 
             console.log("New item added to the cart.");
         }
@@ -99,7 +120,7 @@ export async function addToCart({ product_id, quantity }: {
             status: 200
         });
     } catch (error) {
-        console.log(error);
+        console.log('Error:', error);
         revalidatePath('/');
         console.log({
             message: "An error occurred while creating or updating the cart and cart items",

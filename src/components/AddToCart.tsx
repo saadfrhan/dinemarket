@@ -12,7 +12,7 @@ export default function AddToCart({
 }) {
   let [_, startTransition] = useTransition();
 
-  return (
+  return ( 
     <div className="add-to-cart">
       <button className="btn" onClick={() => {
         startTransition(

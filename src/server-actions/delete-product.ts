@@ -6,9 +6,8 @@ import { and, eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
 import crypto from 'crypto'
 
-export async function deleteFromCart({ product_id, cart_id }: {
-    product_id: string,
-    cart_id: number
+export async function deleteFromCart({ product_id }: {
+    product_id: string
 }) {
 
     const setCookies = cookies();
@@ -24,23 +23,28 @@ export async function deleteFromCart({ product_id, cart_id }: {
     }
 
     try {
-        const [{product_id: deletedProductId, cart_id: cartId}] = await db.delete(
+        const [{ id }] = await db.select({
+            id: cartTable.id,
+        }).from(cartTable)
+            .where(eq(cartTable.user_id, user_id))
+
+        const [{ product_id: deletedProductId, cart_id: cartId }] = await db.delete(
             cartItemsTable
         )
             .where(
                 and(
                     eq(cartItemsTable.product_id, product_id),
-                    eq(cartItemsTable.cart_id, cart_id)
+                    eq(cartItemsTable.cart_id, id)
                 )
             ).returning()
 
-            revalidatePath('/');
-        
+        revalidatePath('/');
+
 
         console.log({
             message: `#${deletedProductId} Product deleted from #${cartId}`
         });
-        
+
 
     } catch (error) {
         revalidatePath('/');
@@ -48,6 +52,6 @@ export async function deleteFromCart({ product_id, cart_id }: {
         console.log({
             message: 'Error in deleting a product from cart.'
         });
-        
+
     }
 }

@@ -59,6 +59,9 @@ dependencies:
   next-sanity-image:
     specifier: ^6.1.0
     version: 6.1.0(@sanity/client@6.1.7)(next@13.4.9)(react@18.2.0)
+  next-stripe:
+    specifier: 1.0.0-beta.1
+    version: 1.0.0-beta.1
   postcss:
     specifier: 8.4.25
     version: 8.4.25
@@ -106,6 +109,9 @@ dependencies:
     version: 9.0.0
 
 devDependencies:
+  '@types/canvas-confetti':
+    specifier: ^1.6.0
+    version: 1.6.0
   '@types/uuid':
     specifier: ^9.0.2
     version: 9.0.2
@@ -1480,6 +1486,12 @@ packages:
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
     dev: false
 
+  /@babel/runtime@7.12.5:
+    resolution: {integrity: sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==}
+    dependencies:
+      regenerator-runtime: 0.13.11
+    dev: false
+
   /@babel/runtime@7.22.6:
     resolution: {integrity: sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==}
     engines: {node: '>=6.9.0'}
@@ -2780,6 +2792,10 @@ packages:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
     dev: false
+
+  /@types/canvas-confetti@1.6.0:
+    resolution: {integrity: sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==}
+    dev: true
 
   /@types/cookie@0.3.3:
     resolution: {integrity: sha512-LKVP3cgXBT9RYj+t+9FDKwS5tdI+rPBXaNSkma7hvqy35lc7mAokC2zsqWJH0LaqIt3B962nuYI77hsJoT1gow==}
@@ -5969,6 +5985,13 @@ packages:
       - supports-color
     dev: false
 
+  /next-stripe@1.0.0-beta.1:
+    resolution: {integrity: sha512-VQrFkgzVObtU+8lf+P0s/TFwSeqgQCO+FcBjnVG86QrGgetCEbfP7bIx+Lzu/lWeDDFsBqQ3Vb+rzDOi5X3vHg==}
+    dependencies:
+      '@babel/runtime': 7.12.5
+      stripe: 8.132.0
+    dev: false
+
   /next@13.4.9(@babel/core@7.22.8)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-vtefFm/BWIi/eWOqf1GsmKG3cjKw1k3LjuefKRcL3iiLl3zWzFdPG3as6xtxrGO6gwTzzaO1ktL4oiHt/uvTjA==}
     engines: {node: '>=16.8.0'}
@@ -7424,6 +7447,14 @@ packages:
   /stripe@12.12.0:
     resolution: {integrity: sha512-aM9xfyDryiaf/qSWMtJaTMrlc/he3qyx3aVHMqOZqUiMdgTV6lt7tLpFrU0pG+QURm1LAP9GYZ+EcA17446YoQ==}
     engines: {node: '>=12.*'}
+    dependencies:
+      '@types/node': 20.4.0
+      qs: 6.11.2
+    dev: false
+
+  /stripe@8.132.0:
+    resolution: {integrity: sha512-VFKQJWgPt2X0r/jh4wS6Kgx6/VH1IHw1466wIwahgWzgSANme5iNaJ+1AW45hvRUZJ+T15f2hTfQkQGyP73ZCg==}
+    engines: {node: ^8.1 || >=10.*}
     dependencies:
       '@types/node': 20.4.0
       qs: 6.11.2
