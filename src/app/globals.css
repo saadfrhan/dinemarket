@@ -72,7 +72,9 @@
 
 @layer base {
   * {
-    @apply border-border box-border p-0 m-0 border-2 border-red-600;
+    @apply border-border box-border p-0 m-0 
+    /* border-2 border-red-600 */
+    ;
   }
 
   img {
