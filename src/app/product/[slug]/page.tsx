@@ -47,8 +47,8 @@ export default async function ProductPage({
       <div className='desc-care'>
         <h4>PRODUCT CARE</h4>
         <ul>
-          {careList.map(list => (
-            <li>{list}</li>
+          {careList.map((list, index) => (
+            <li key={index}>{list}</li>
           ))}
         </ul>
       </div>

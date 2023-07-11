@@ -1,15 +1,5 @@
 "use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-
-import ProductOne from '/public/TrendProduct1.png';
-import ProductTwo from '/public/TrendProduct2.png';
-import ProductThree from '/public/TrendProduct3.png';
-import ProductFour from '/public/TrendProduct4.png';
-import ProductFive from '/public/TrendProduct5.png';
-import ProductSix from '/public/TrendProduct6.png';
-
 import { Navigation, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -48,13 +38,12 @@ export default async function SwiperSlider() {
     >
       <div className='products-container'>
         {products.map(({ name, price, slug, image }, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <ProductSlideCard
               imageUrl={urlForImage(image && image[0]).url()}
               name={name}
               price={price}
               slug={slug}
-              key={index}
             />
           </SwiperSlide>
         ))}
