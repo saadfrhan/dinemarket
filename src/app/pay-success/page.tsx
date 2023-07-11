@@ -5,7 +5,7 @@ import React from 'react'
 import { cartItemsTable, cartTable, db } from "@/lib/drizzle";
 import { eq } from "drizzle-orm";
 
-export async function EmptyCart(
+export async function emptyCart(
     userId: number
 ) {
     try {
@@ -33,7 +33,7 @@ export default async function PaySuccess() {
   const userId = cookie.get('user_id')?.value;
   
   if (userId) {
-    await EmptyCart(Number(userId));
+    await emptyCart(Number(userId));
   }
 
   return (
