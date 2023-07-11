@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react'
-import AddToCart from './AddToCart'
+import AddToCart from '../Cart/AddToCart'
 import { MinusIcon, PlusIcon } from 'lucide-react'
 
 export default function ProductDetails({
@@ -37,7 +37,7 @@ export default function ProductDetails({
                     <li>XS</li>
                     <li>S</li>
                     <li>M</li>
-                    <li>L</li>
+                    <li>L</li> 
                     <li>XL</li>
                 </ul>
             </div>

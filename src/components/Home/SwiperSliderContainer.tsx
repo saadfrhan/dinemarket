@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import ProductSlideCard from './ProductSlideCard';
-import { urlForImage } from '../../sanity/lib/image';
+import { urlForImage } from '../../../sanity/lib/image';
 import { ProductCardI } from '@/types';
 
 export default function SwiperSliderContainer(

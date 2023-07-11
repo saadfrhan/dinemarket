@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../ui/button'
 
 export default function Newsletter() {
     return (
@@ -10,7 +11,7 @@ export default function Newsletter() {
             <p>Get the latest information and promo offers directly</p>
             <form>
                 <input type="email" placeholder='Input email address' />
-                <button type="submit">Get started</button>
+                <Button>Submit</Button>
             </form>
         </section>
     )

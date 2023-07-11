@@ -1,16 +1,8 @@
-
-import Image from 'next/image'
-
-
-import Feature from '/public/feature.webp'
-
-
-
-import SwiperSlider from '@/components/SwiperSlider';
-import Newsletter from '@/components/Newsletter';
-import Header from '@/components/Header';
-import Event from '@/components/Event';
-import Features from '@/components/Features';
+import SwiperSlider from '@/components/Home/SwiperSlider';
+import Newsletter from '@/components/Home/Newsletter';
+import Header from '@/components/Home/Header';
+import Event from '@/components/Home/Event';
+import Features from '@/components/Home/Features';
 
 export default function Home() {
   return <div>

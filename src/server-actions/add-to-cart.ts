@@ -70,10 +70,7 @@ export async function addToCart({ product_id, quantity }: {
             console.log('existing cart item:', existingCartItem[0]);
 
             // Calculate the difference between the new quantity and the existing quantity
-            const quantityDifference = existingCartItem[0].quantity > quantity ?
-                existingCartItem[0].quantity - quantity : quantity - existingCartItem[0].quantity
-                ;
-
+            const quantityDifference = quantity - existingCartItem[0].quantity;
 
             // If the item exists, update the quantity
             await db

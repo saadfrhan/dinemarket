@@ -1,11 +1,11 @@
-import ItemCard from "@/components/ItemCard";
+import ItemCard from "@/components/Cart/ItemCard";
 import { cookies } from "next/headers";
 import { getProductsByIds } from "../../../sanity/utils";
 import { urlForImage } from "../../../sanity/lib/image";
 import { ShoppingBag } from "lucide-react";
 import { cartItemsTable, cartTable, db } from "@/lib/drizzle";
 import { eq } from "drizzle-orm";
-import CartPageContainer from "@/components/CartPageContainer";
+import CartPageContainer from "@/components/Cart/CartPageContainer";
 
 async function getUserCart() {
   const cookie = cookies();

@@ -1,7 +1,7 @@
 import React from 'react'
 import { getProductBySlug } from '../../../../sanity/utils';
-import ProductImage from '@/components/ProductImage';
-import ProductDetails from '@/components/ProductDetails';
+import ProductImage from '@/components/Product/ProductImage';
+import ProductDetails from '@/components/Product/ProductDetails';
 
 export default async function ProductPage({
   params: {
@@ -48,7 +48,7 @@ export default async function ProductPage({
         <h4>PRODUCT CARE</h4>
         <ul>
           {careList.map((list, index) => (
-            <li key={index}>{list}</li>
+            <li key={index} className='list-disc'>{list}</li>
           ))}
         </ul>
       </div>

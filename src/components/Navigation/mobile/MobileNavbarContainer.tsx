@@ -2,9 +2,9 @@
 
 import { AlignRight, X } from 'lucide-react'
 import React, { useState } from 'react'
-import Logo from './Logo';
-import NavBtns from './NavBtns';
-import CartIcon from './CartIcon';
+import Logo from '../Logo';
+import NavBtns from '../NavBtns';
+import CartIcon from '../CartIcon';
 
 export default function MobileNavbarContainer({
     items_count
@@ -17,8 +17,9 @@ export default function MobileNavbarContainer({
         <div className="nav-mobile-box">
 
             <div className={`
-  ${showOverlay && `h-screen flex flex-col bg-white items-center justify-center fixed top-0 left-0 w-full z-[3]`}
-`}>
+  ${showOverlay &&
+                `h-screen flex flex-col bg-white items-center justify-center fixed top-0 left-0 w-full z-[3]`}`
+            }>
 
                 {!showOverlay && <div
                     className="absolute max-md-650:top-8 max-md-650:right-8 max-[825px]:top-12 max-[825px]:right-12 cursor-pointer max-lg-1k:top-16 z-[1] max-lg-1k:right-16"

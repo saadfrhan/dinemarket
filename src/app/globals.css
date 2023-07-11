@@ -72,9 +72,7 @@
 
 @layer base {
   * {
-    @apply border-border box-border p-0 m-0 
-    /* border-2 border-red-600 */
-    ;
+    @apply border-border box-border p-0 m-0;
   }
 
   img {
@@ -114,15 +112,11 @@
   }
 
   .header-main-heading {
-    @apply font-bold text-6xl leading-[55px] tracking-[0.03em] text-[#212121] max-md-650:text-5xl
+    @apply font-bold text-6xl leading-[55px] tracking-[0.03em] text-[#212121]  max-md-650:text-5xl
   }
 
   .header-main-helper-text {
-    @apply font-normal text-base leading-6 text-[#666] w-[300px]
-  }
-
-  .header-main-button {
-    @apply flex gap-2 p-4 text-white bg-black font-bold w-fit xl-12:w-[150px] text-center justify-center items-center rounded-[6px] xl-12:break-words max-lg-1k:px-[40px] max-lg-1k:py-[20px]
+    @apply font-normal text-base leading-6 text-[#666] w-[300px] 
   }
 
   .header-featured {
@@ -130,11 +124,10 @@
   }
 
   .header-right-side {
-    @apply max-lg-1k:hidden flex flex-1 justify-center items-center
+    @apply max-lg-1k:hidden flex flex-1
   }
 
-  .header-circle,
-  .header-img {
+  .header-circle .header-image {
     @apply absolute top-[-5%]
   }
 
@@ -155,7 +148,7 @@
   }
 
   .subtitle>h2 {
-    @apply text-[32px] leading-[40px] tracking-[0.03em] text-black
+    @apply text-[32px] leading-[40px] tracking-[0.03em] 
   }
 
   .subtitle>span,
@@ -172,7 +165,7 @@
   }
 
   .event-card {
-    @apply first:bg-[#d6d6d8] first:flex first:justify-between first:items-center first:py-0 first:px-8 first:tracking-wider first:text-[#212121] first:max-[450px]:flex-col first:max-md-650:pt-8 first:max-lg-1k:pt-0 last:bg-[#212121] last:text-[#fff] last:flex last:flex-col last:justify-center last:items-center last:pt-12 last:px-8 last:pb-8 last:max-md-650:p-8 last:max-lg-1k:p-12
+    @apply first:bg-[#d6d6d8] dark:border-[#fff] dark:border-2 rounded-sm dark:bg-black first:flex first:justify-between first:items-center first:py-0 first:px-8 first:tracking-wider first:text-[#212121]  first:max-[450px]:flex-col first:max-md-650:pt-8 first:max-lg-1k:pt-0 last:bg-[#212121] last:text-[#fff] last:flex last:flex-col last:justify-center last:items-center last:pt-8 last:px-8 last:pb-8 last:max-md-650:p-8 last:max-lg-1k:p-12
   }
 
   .event-card>.content>h3 {
@@ -188,7 +181,7 @@
   }
 
   .event-banner-left {
-    @apply max-sm-450:flex-col max-md-650:pt-8 max-lg-1k:pt-0
+    @apply max-sm-450:flex-col max-md-650:pt-8 max-lg-1k:pt-0 
   }
 
   .event-card:last-child h3 {
@@ -212,12 +205,12 @@
   }
 
   .event-banner-right-1 {
-    @apply bg-[#efe1c7]
+    @apply bg-[#efe1c7] 
   }
 
   .event-banner-right-1,
   .event-banner-right-2 {
-    @apply w-full
+    @apply w-full rounded-sm
   }
 
   .details {
@@ -334,7 +327,7 @@
   }
 
   .newsletter {
-    @apply max-md-650:py-[6rem_2rem] max-xl-12:p-[6rem_4rem] p-[10rem_8rem] flex flex-col justify-center items-center text-center relative z-[1]
+    @apply max-md-650:p-[6rem_2rem] max-xl-12:p-[6rem_4rem] p-[10rem_8rem] flex flex-col justify-center items-center text-center relative z-[1]
   }
 
   .newsletter-background {
@@ -349,19 +342,22 @@
     @apply mb-8
   }
 
+  .newsletter form {
+    @apply flex max-lg-1k:flex-col gap-4 justify-start items-start
+  }
 
   .newsletter input {
-    @apply p-[6px_116px_6px_16px] bg-[#fcfcfc] border-[1px] border-gray-500
+    @apply p-[6px_16px_6px_16px] bg-[#fcfcfc] border-[1px] border-gray-500
   }
 
   .newsletter button {
-    @apply max-lg-1k:p-[10px_40px] p-[10px_20px] ml-[10px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
+    @apply max-lg-1k:p-[10px_40px] p-[10px_20px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
   }
 
   .footer,
   .event-container,
   .products-outer-container {
-    @apply max-md-650:py-[4rem_2rem] max-xl-12:p-[4rem] max-2xl-12p:p-[2rem_6rem] p-[4rem_8rem]
+    @apply max-md-650:p-[4rem_2rem] max-xl-12:p-[4rem] max-2xl-12p:p-[2rem_6rem] p-[4rem_8rem]
   }
 
   .footer {
@@ -378,7 +374,7 @@
 
   .footer li,
   .footer p {
-    @apply font-normal text-[1rem] leading-[22px] text-[#666]
+    @apply font-normal text-[1rem] leading-[22px] text-[#666] 
   }
 
   .icon-container {
@@ -426,7 +422,7 @@
   .cart-wrapper,
   .header,
   .success {
-    @apply m-[4rem] max-xl-12:m-[2rem] max-2xl-12p:m-[4rem_6rem]
+    @apply m-[6rem] max-xl-12:m-[2rem] max-2xl-12p:m-[4rem_6rem]
   }
 
   .Allproducts-container {
@@ -459,11 +455,7 @@
   }
 
   .products {
-    @apply max-md-650:p-8 max-xl-12:p-16
-  }
-
-  .products {
-    @apply max-xl-12:p-16 max-2xl-12p:p-[4rem_6rem] bg-[#fcfcfc] p-[4rem_8rem]
+    @apply max-md-650:p-8 max-xl-12:p-16 max-2xl-12p:p-[4rem_6rem] 2xl-12p:m-[4rem_6rem_4rem_6rem]
   }
 
   .product-detail-container {
@@ -491,7 +483,7 @@
   }
 
   .product-details {
-    @apply flex flex-col flex-1 gap-10 mt-16
+    @apply flex flex-col flex-1 gap-10 mt-16 ml-16
   }
 
   .name-and-category h3 {
@@ -503,7 +495,7 @@
   }
 
   .size p {
-    @apply text-[#212121]
+    @apply text-[#212121] 
   }
 
   .size li,
@@ -520,7 +512,7 @@
   }
 
   .minus {
-    @apply mr-[10px] border-[2px_solid_#f1f1f1] bg-[#f1f1f1]
+    @apply mr-[10px]  bg-[#f1f1f1] dark:bg-[#352e2e]
   }
 
   .minus,
@@ -529,7 +521,7 @@
   }
 
   .plus {
-    @apply ml-[10px] border-2 border-[#000]
+    @apply ml-[10px] border-2 border-black 
   }
 
   .add-to-cart {
@@ -541,7 +533,7 @@
   }
 
   .product-desc-container {
-    @apply max-md-650:p-8 bg-[#fff] flex flex-col mt-16 p-[2rem_4rem_6rem] gap-8
+    @apply max-md-650:p-0 flex flex-col mt-16 p-[2rem_4rem_6rem] gap-8 
   }
 
   .quantity-desc {
@@ -564,7 +556,7 @@
   }
 
   .btn {
-    @apply font-semibold leading-[18px] bg-[#212121] p-[10px_0] flex items-center justify-center gap-2 text-white rounded-sm
+    @apply font-semibold leading-[18px] bg-[#212121] flex items-center justify-center gap-2 text-white rounded-sm
   }
 
   .product-desc-container div {
@@ -580,7 +572,7 @@
   }
 
   .desc-title h2 {
-    @apply font-bold text-[1.4rem] leading-[25px] tracking-wider text-[#212121] pb-12 z-[2] top-[45%] absolute
+    @apply font-bold text-[1.4rem] leading-[25px] tracking-wider text-[#212121] pb-12 z-[2] top-[45%] absolute 
   }
 
   .desc-care,
@@ -594,7 +586,7 @@
 
   .product-desc-container p,
   .product-desc-container ul {
-    @apply flex-[2_1]
+    @apply flex-[2_1] 
   }
 
   .product-desc-container li,
@@ -603,7 +595,7 @@
   }
 
   .product-desc-container li {
-    @apply font-semibold list-inside
+    @apply font-semibold list-inside 
   }
 
   .cart-wrapper {

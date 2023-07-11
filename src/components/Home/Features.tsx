@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Feature from '/public/feature.webp'
+import { Button } from '../ui/button'
 
 export default function Features() {
   return (
@@ -36,7 +37,9 @@ export default function Features() {
               This piece is ethically crafted in our small family-owned workshop in Peru with unmatched attention to detail and care. The Natural color is the actual natural color of the fiber, undyed and 100% traceable.
             </p>
             <Link href="/products">
-              <button className='btn'>See All Products</button>
+              <Button>
+                See All Products
+              </Button>
             </Link>
           </div>
         </div>

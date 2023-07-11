@@ -4,6 +4,7 @@ import { addToCart } from '@/server-actions/add-to-cart';
 import { ShoppingCart } from 'lucide-react';
 import React, { useTransition } from 'react'
 import { toast } from 'react-hot-toast';
+import { Button } from '../ui/button';
 
 export default function AddToCart({
   _id, quantity, price, name
@@ -14,7 +15,7 @@ export default function AddToCart({
 
   return ( 
     <div className="add-to-cart">
-      <button className="btn" onClick={() => {
+      <Button size="md" onClick={() => {
         startTransition(
           () => {
             void addToCart({
@@ -28,7 +29,7 @@ export default function AddToCart({
         );
       }}>
         <ShoppingCart height={20} width={20} /> Add to Cart
-      </button>
+      </Button>
 
       <p className="price">
         ${price}.00

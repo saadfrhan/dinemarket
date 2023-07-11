@@ -1,9 +1,9 @@
 import React from 'react'
-import Logo from './Logo'
-import NavBtns from './NavBtns'
-import Search from './Search'
-import CartIcon from './CartIcon'
-import { getItemsCount } from '@/lib/utils'
+import Logo from '../Logo'
+import NavBtns from '../NavBtns'
+import Search from '../Search'
+import CartIcon from '../CartIcon'
+import { getItemsCount } from '@/lib/getItemsCount'
 
 export default async function Navbar() {
   const count = await getItemsCount();

@@ -1,4 +1,4 @@
-import { getProducts } from '../../sanity/utils';
+import { getProducts } from '../../../sanity/utils';
 import SwiperSliderContainer from './SwiperSliderContainer';
 
 export default async function SwiperSlider() {

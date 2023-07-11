@@ -15,7 +15,7 @@ export default function Event() {
         <div className='event-banner-left'>
           <div className="event-card">
             <div className='content'>
-              <h3>
+              <h3> 
                 GET <br /> UP TO{" "}
                 <span>60%</span>
               </h3>

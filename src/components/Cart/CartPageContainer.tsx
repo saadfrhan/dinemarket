@@ -1,12 +1,13 @@
 "use client";
 
 import React from 'react'
-import { urlForImage } from '../../sanity/lib/image'
+import { urlForImage } from '../../../sanity/lib/image'
 import ItemCard from './ItemCard'
 import { ShoppingBag } from 'lucide-react'
 import { ProductCardI } from '@/types'
 import getStripe from '@/lib/stripe'
 import { toast } from 'react-hot-toast'
+import { Button } from '../ui/button';
 
 interface CartPageContainerProps {
   _products: ProductCardI[] | [];
@@ -99,9 +100,9 @@ export default function CartPageContainer(
             </div>
 
             <div>
-              <button className="btn" onClick={handleCheckout}>
+              <Button onClick={handleCheckout}>
                 Proceed to Checkout
-              </button>
+              </Button>
             </div>
 
           </div>)}

@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductCard from '@/components/ProductCard';
+import ProductCard from '@/components/Product/ProductCard';
 import { getProducts } from '../../../../sanity/utils';
 
 async function Products({
