@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import EventOne from '/public/Event1.webp';
+import EventOne from '/public/Event1.png';
 import EventTwo from '/public/Event2.webp';
 import EventThree from '/public/Event3.webp';
 
