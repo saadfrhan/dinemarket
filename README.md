@@ -15,10 +15,10 @@
 ## Running Locally
 
 ```bash
-  git clone https://github.com/saadfrhan/online-marketplace.git
-  cd online-marketplace
-  pnpm install
-  pnpm dev
+git clone https://github.com/saadfrhan/online-marketplace.git
+cd online-marketplace
+pnpm install
+pnpm dev
 ```
 
 Create a `.env` file similar to [`.env.example`](./.env.example).
