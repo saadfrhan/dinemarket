@@ -11,7 +11,6 @@ export function cn(...inputs: ClassValue[]) {
 export async function getItemsCount() {
   const cookie = cookies();
   const getUserId = cookie.get('user_id')?.value;
-  console.log(getUserId);
 
   if (!getUserId) {
     return {
