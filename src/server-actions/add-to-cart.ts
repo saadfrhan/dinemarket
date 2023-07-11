@@ -69,25 +69,16 @@ export async function addToCart({ product_id, quantity }: {
         if (existingCartItem.length !== 0) {
             console.log('existing cart item:', existingCartItem[0]);
 
-            // Calculate the difference between the new quantity and the existing quantity
-            const quantityDifference = quantity - existingCartItem[0].quantity;
-
             // If the item exists, update the quantity
             await db
                 .update(cartItemsTable)
-                .set({ quantity })
+                .set({ quantity: existingCartItem[0].quantity + quantity })
                 .where(eq(cartItemsTable.id, existingCartItem[0].id));
 
             await db
                 .update(cartTable)
-                .set({ items_count: itemsCount + quantityDifference })
+                .set({ items_count: itemsCount + quantity })
                 .where(eq(cartTable.user_id, user_id));
-
-            console.log(`Updated cart: ${JSON.stringify(await db
-                .select()
-                .from(cartTable)
-                .where(eq(cartTable.user_id, user_id))
-                .limit(1))}`);
 
             console.log("Existing item quantity updated in the cart.");
 
