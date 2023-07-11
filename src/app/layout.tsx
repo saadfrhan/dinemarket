@@ -1,9 +1,11 @@
-import { MobileNavbar, Navbar } from '@/components/Navbar'
 import './globals.css'
 import Footer from '@/components/Footer';
-import {sora} from './font'
+import { sora } from './font'
+import MobileNavbar from '@/components/Navigation/mobile/MobileNav';
+import { Toaster } from 'react-hot-toast';
+import Navbar from '@/components/Navigation/landscape/Navbar';
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
@@ -11,11 +13,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sora.className} flex flex-col`}>
+        <Toaster />
         <nav className="block">
-          <div className="max-[1000px]:hidden"><Navbar /></div>
-        <div className="min-[1000px]:hidden"><MobileNavbar /></div>
+          <Navbar />
+          <MobileNavbar />
         </nav>
-        {children}
+        <div className='max-lg-1k:mt-16'>
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

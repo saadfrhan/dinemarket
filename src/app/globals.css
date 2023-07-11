@@ -4,69 +4,69 @@
 
 @layer base {
   :root {
-    --background:0 0% 100%;
-    --foreground:222.2 47.4% 11.2%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
 
-    --muted:210 40% 96.1%;
-    --muted-foreground:215.4 16.3% 46.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --popover:0 0% 100%;
-    --popover-foreground:222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
 
-    --card:0 0% 100%;
-    --card-foreground:222.2 47.4% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
 
-    --border:214.3 31.8% 91.4%;
-    --input:214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
 
-    --primary:222.2 47.4% 11.2%;
-    --primary-foreground:210 40% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary:210 40% 96.1%;
-    --secondary-foreground:222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --accent:210 40% 96.1%;
-    --accent-foreground:222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive:0 100% 50%;
-    --destructive-foreground:210 40% 98%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
 
-    --ring:215 20.2% 65.1%;
+    --ring: 215 20.2% 65.1%;
 
-    --radius:0.5rem;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background:224 71% 4%;
-    --foreground:213 31% 91%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    --muted:223 47% 11%;
-    --muted-foreground:215.4 16.3% 56.9%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
 
-    --popover:224 71% 4%;
-    --popover-foreground:215 20.2% 65.1%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
 
-    --card:224 71% 4%;
-    --card-foreground:213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --border:216 34% 17%;
-    --input:216 34% 17%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
 
-    --primary:210 40% 98%;
-    --primary-foreground:222.2 47.4% 1.2%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
 
-    --secondary:222.2 47.4% 11.2%;
-    --secondary-foreground:210 40% 98%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
 
-    --accent:216 34% 17%;
-    --accent-foreground:210 40% 98%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive:0 63% 31%;
-    --destructive-foreground:210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --ring:216 34% 17%;
+    --ring: 216 34% 17%;
 
-    --radius:0.5rem;
+    --radius: 0.5rem;
   }
 }
 
@@ -81,11 +81,12 @@
 
   body {
     @apply bg-background text-foreground overflow-x-hidden max-w-full;
-    font-feature-settings:"rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   .nav-mobile-box {
-    @apply max-md-650:mx-[2rem] max-md-650:mt-[2rem] max-lg-1k:mx-[4rem] max-lg-1k:mt-[4rem] max-xl-12:mx-[2rem] max-xl-12:mt-[2rem]
+    @apply 
+    lg-1k:hidden
   }
 
   .header {
@@ -111,15 +112,11 @@
   }
 
   .header-main-heading {
-    @apply font-bold text-6xl leading-[55px] tracking-[0.03em] text-[#212121] max-md-650:text-5xl
+    @apply font-bold text-6xl leading-[55px] tracking-[0.03em] text-[#212121]  max-md-650:text-5xl
   }
 
   .header-main-helper-text {
-    @apply font-normal text-base leading-6 text-[#666] w-[300px]
-  }
-
-  .header-main-button {
-    @apply flex gap-2 p-4 text-white bg-black font-bold w-fit xl-12:w-[150px] text-center justify-center items-center rounded-[6px] xl-12:break-words max-lg-1k:px-[40px] max-lg-1k:py-[20px]
+    @apply font-normal text-base leading-6 text-[#666] w-[300px] 
   }
 
   .header-featured {
@@ -127,11 +124,10 @@
   }
 
   .header-right-side {
-    @apply max-lg-1k:hidden flex flex-1 justify-center items-center
+    @apply max-lg-1k:hidden flex flex-1
   }
 
-  .header-circle,
-  .header-img {
+  .header-circle .header-image {
     @apply absolute top-[-5%]
   }
 
@@ -152,7 +148,7 @@
   }
 
   .subtitle>h2 {
-    @apply text-[32px] leading-[40px] tracking-[0.03em] text-black
+    @apply text-[32px] leading-[40px] tracking-[0.03em] 
   }
 
   .subtitle>span,
@@ -169,7 +165,7 @@
   }
 
   .event-card {
-    @apply first:bg-[#d6d6d8] first:flex first:justify-between first:items-center first:py-0 first:px-8 first:tracking-wider first:text-[#212121] first:max-[450px]:flex-col first:max-md-650:pt-8 first:max-lg-1k:pt-0 last:bg-[#212121] last:text-[#fff] last:flex last:flex-col last:justify-center last:items-center last:pt-12 last:px-8 last:pb-8 last:max-md-650:p-8 last:max-lg-1k:p-12
+    @apply first:bg-[#d6d6d8] dark:border-[#fff] dark:border-2 rounded-sm dark:bg-black first:flex first:justify-between first:items-center first:py-0 first:px-8 first:tracking-wider first:text-[#212121]  first:max-[450px]:flex-col first:max-md-650:pt-8 first:max-lg-1k:pt-0 last:bg-[#212121] last:text-[#fff] last:flex last:flex-col last:justify-center last:items-center last:pt-8 last:px-8 last:pb-8 last:max-md-650:p-8 last:max-lg-1k:p-12
   }
 
   .event-card>.content>h3 {
@@ -185,7 +181,7 @@
   }
 
   .event-banner-left {
-    @apply max-[450px]:flex-col max-md-650:pt-8 max-lg-1k:pt-0
+    @apply max-sm-450:flex-col max-md-650:pt-8 max-lg-1k:pt-0 
   }
 
   .event-card:last-child h3 {
@@ -209,12 +205,12 @@
   }
 
   .event-banner-right-1 {
-    @apply bg-[#efe1c7]
+    @apply bg-[#efe1c7] 
   }
 
   .event-banner-right-1,
   .event-banner-right-2 {
-    @apply w-full
+    @apply w-full rounded-sm
   }
 
   .details {
@@ -299,7 +295,7 @@
   }
 
   .features-section .content .left .feature-background {
-    @apply max-md-650:text-[5rem] max-lg-1k:text-[6rem] font-extrabold text-[6.8rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1]
+    @apply max-sm-450:text-[4rem] max-md-650:text-[5rem] max-lg-1k:text-[6rem] font-extrabold text-[6.8rem] leading-[110px] absolute text-[#212121] opacity-[.07] z-[1]
   }
 
   .features-section .content .left div {
@@ -315,7 +311,7 @@
   }
 
   .features-section .content .right {
-    @apply flex justify-center items-center gap-8
+    @apply flex justify-center items-center gap-8 max-lg-1k:flex-col
   }
 
   .features-section .content .right div {
@@ -331,7 +327,7 @@
   }
 
   .newsletter {
-    @apply max-md-650:py-[6rem_2rem] max-xl-12:p-[6rem_4rem] p-[10rem_8rem] flex flex-col justify-center items-center text-center relative z-[1]
+    @apply max-md-650:p-[6rem_2rem] max-xl-12:p-[6rem_4rem] p-[10rem_8rem] flex flex-col justify-center items-center text-center relative z-[1]
   }
 
   .newsletter-background {
@@ -346,19 +342,22 @@
     @apply mb-8
   }
 
+  .newsletter form {
+    @apply flex max-lg-1k:flex-col gap-4 justify-start items-start
+  }
 
   .newsletter input {
-    @apply p-[6px_116px_6px_16px] bg-[#fcfcfc] border-[1px] border-gray-500
+    @apply p-[6px_16px_6px_16px] bg-[#fcfcfc] border-[1px] border-gray-500
   }
 
   .newsletter button {
-    @apply max-lg-1k:p-[10px_40px] p-[10px_20px] ml-[10px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
+    @apply max-lg-1k:p-[10px_40px] p-[10px_20px] bg-[#000] text-[#fff] font-semibold text-[.9rem] leading-[16px]
   }
 
   .footer,
   .event-container,
   .products-outer-container {
-    @apply max-md-650:py-[4rem_2rem] max-xl-12:p-[4rem] max-2xl-12p:p-[2rem_6rem] p-[4rem_8rem]
+    @apply max-md-650:p-[4rem_2rem] max-xl-12:p-[4rem] max-2xl-12p:p-[2rem_6rem] p-[4rem_8rem]
   }
 
   .footer {
@@ -375,7 +374,7 @@
 
   .footer li,
   .footer p {
-    @apply font-normal text-[1rem] leading-[22px] text-[#666]
+    @apply font-normal text-[1rem] leading-[22px] text-[#666] 
   }
 
   .icon-container {
@@ -423,19 +422,19 @@
   .cart-wrapper,
   .header,
   .success {
-    @apply m-[4rem_8rem] max-xl-12:m-[4rem] max-2xl-12p:m-[4rem_6rem]
+    @apply m-[6rem] max-xl-12:m-[2rem] max-2xl-12p:m-[4rem_6rem]
   }
 
   .Allproducts-container {
-    @apply max-md-650:grid-cols-1 max-lg-1k:grid-cols-2 max-2xl-12p:grid-cols-3 grid grid-cols-4 justify-between items-center gap-x-[4rem] gap-y-[4rem]
+    @apply max-md-650:grid-cols-1 max-lg-1k:grid-cols-2 max-2xl-12p:grid-cols-3 grid grid-cols-4 justify-between items-center gap-x-[2rem] gap-y-[6rem]
   }
 
   .Allproduct-card {
-    @apply w-[300px]
+    @apply lg-1k:w-[300px] w-full h-full
   }
 
   .Allproduct-card img {
-    @apply w-full h-full
+    @apply xl-12:w-[80%] xl-12:h-[80%] w-full h-full
   }
 
   .Allproduct-name {
@@ -456,11 +455,7 @@
   }
 
   .products {
-    @apply max-md-650:p-8 max-xl-12:p-16
-  }
-
-  .products {
-    @apply max-xl-12:p-16 max-2xl-12p:p-[4rem_6rem] bg-[#fcfcfc] p-[4rem_8rem]
+    @apply max-md-650:p-8 max-xl-12:p-16 max-2xl-12p:p-[4rem_6rem] 2xl-12p:m-[4rem_6rem_4rem_6rem]
   }
 
   .product-detail-container {
@@ -488,7 +483,7 @@
   }
 
   .product-details {
-    @apply flex flex-col flex-1 gap-10 mt-16
+    @apply flex flex-col flex-1 gap-10 mt-16 ml-16
   }
 
   .name-and-category h3 {
@@ -500,7 +495,7 @@
   }
 
   .size p {
-    @apply text-[#212121]
+    @apply text-[#212121] 
   }
 
   .size li,
@@ -517,7 +512,7 @@
   }
 
   .minus {
-    @apply mr-[10px] border-[2px_solid_#f1f1f1] bg-[#f1f1f1]
+    @apply mr-[10px]  bg-[#f1f1f1] dark:bg-[#352e2e]
   }
 
   .minus,
@@ -526,11 +521,11 @@
   }
 
   .plus {
-    @apply ml-[10px] border-2 border-[#000]
+    @apply ml-[10px] border-2 border-black 
   }
 
   .add-to-cart {
-    @apply flex items-center gap-4 
+    @apply flex items-center gap-4
   }
 
   .add-to-cart .price {
@@ -538,15 +533,18 @@
   }
 
   .product-desc-container {
-    @apply max-md-650:p-8 bg-[#fff] flex flex-col mt-16 p-[2rem_4rem_6rem] gap-8
+    @apply max-md-650:p-0 flex flex-col mt-16 p-[2rem_4rem_6rem] gap-8 
   }
 
   .quantity-desc {
     @apply gap-8
   }
 
-  .quantity-desc div, .quantity-desc, .price-and-qty div, .price-and-qty {
-    @apply flex items-center 
+  .quantity-desc div,
+  .quantity-desc,
+  .price-and-qty div,
+  .price-and-qty {
+    @apply flex items-center
   }
 
   .quantity-desc h4 {
@@ -558,7 +556,7 @@
   }
 
   .btn {
-    @apply font-semibold leading-[18px] bg-[#212121] p-[10px_0] flex items-center justify-center gap-2 text-white rounded-sm
+    @apply font-semibold leading-[18px] bg-[#212121] flex items-center justify-center gap-2 text-white rounded-sm
   }
 
   .product-desc-container div {
@@ -574,10 +572,11 @@
   }
 
   .desc-title h2 {
-    @apply font-bold text-[1.4rem] leading-[25px] tracking-wider text-[#212121] pb-12 z-[2] top-[45%] absolute
+    @apply font-bold text-[1.4rem] leading-[25px] tracking-wider text-[#212121] pb-12 z-[2] top-[45%] absolute 
   }
 
-  .desc-care, .desc-details {
+  .desc-care,
+  .desc-details {
     @apply max-sm-450:flex max-sm-450:flex-col max-sm-450:gap-8
   }
 
@@ -585,20 +584,22 @@
     @apply flex-1 font-bold text-[1rem] leading-[19px] tracking-wider text-[#666]
   }
 
-  .product-desc-container p, .product-desc-container ul {
-    @apply flex-[2_1]
+  .product-desc-container p,
+  .product-desc-container ul {
+    @apply flex-[2_1] 
   }
 
-  .product-desc-container li, .product-desc-container p {
+  .product-desc-container li,
+  .product-desc-container p {
     @apply font-light text-[1rem] leading-[26px] text-justify tracking-wider text-[#212121]
   }
 
   .product-desc-container li {
-    @apply font-semibold list-inside
+    @apply font-semibold list-inside 
   }
 
   .cart-wrapper {
-    @apply max-lg-1k:p-0 max-xl-12:m-16 max-2xl-12p:m-[4rem_6rem] p-12
+    @apply max-lg-1k:p-0 max-xl-12:m-4 max-2xl-12p:m-[4rem_6rem] p-12
   }
 
   .cart-container {
@@ -609,12 +610,13 @@
     @apply mt-8 gap-16 flex-[3_1]
   }
 
-  .empty-cart, .cart-items {
+  .empty-cart,
+  .cart-items {
     @apply flex flex-col
   }
 
   .item-card {
-    @apply max-md-650:flex-col flex gap-8
+    @apply max-md-650:flex-col flex gap-2
   }
 
   .item-image {
@@ -622,7 +624,7 @@
   }
 
   .item-image img {
-    @apply w-full h-full rounded-[9px]
+    @apply w-full h-auto rounded-[9px]
   }
 
   .item-details {
@@ -645,7 +647,8 @@
     @apply leading-[16px] text-[#666] font-semibold
   }
 
-  .delivery-days, .delivery-est {
+  .delivery-days,
+  .delivery-est {
     @apply font-semibold text-base leading-[22px] text-[#212121]
   }
 
@@ -662,11 +665,11 @@
   }
 
   .order-summary {
-    @apply p-8 bg-[#fbfcff] flex flex-col flex-1 gap-8
+    @apply p-4 bg-[#fbfcff] flex flex-col flex-1 gap-8 w-full
   }
 
   .order-summary div {
-    @apply flex justify-between gap-16 
+    @apply flex justify-between gap-16
   }
 
   .order-summary .btn {
@@ -679,5 +682,39 @@
 
   .order-summary h3 {
     @apply font-bold text-[1.2rem]
+  }
+
+  .empty-cart {
+    @apply flex justify-center items-center flex-col gap-2
+  }
+
+  .empty-cart h1 {
+    @apply text-3xl font-extrabold
+  }
+
+  .success, .canceled {
+    @apply p-[6rem_0] bg-[#f1f1f1] flex flex-col justify-center items-center text-center rounded-[15px]
+  }
+
+  .success h1,
+  .canceled h1 {
+    @apply text-[2.75rem] m-[0.5rem_0]
+  }
+
+  .success .btn,
+  .canceled .btn {
+    @apply p-[15px] w-[400px] text-[1.125rem] rounded-[10px]
+  }
+
+  .success .description,
+  .success button,
+  .canceled .description,
+  .canceled button {
+    @apply mt-8
+  }
+
+  .success .description a,
+  .canceled .description a {
+    @apply ml-[5px] text-red-600
   }
 }

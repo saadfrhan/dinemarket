@@ -2,13 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './src/pages/**/*.{ts,tsx}',
     './src/components/**/*.{ts,tsx}',
     './src/app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
 	],
-  screens: {
-    '<1000': ""
-  },
   theme: {
     container: {
       center: true,
@@ -60,9 +57,6 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      aspectRatio: {
-        logo: "auto 140/25"
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -85,4 +79,5 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  important: true
 }

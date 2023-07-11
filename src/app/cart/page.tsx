@@ -1,60 +1,77 @@
-import Image from 'next/image'
-import React from 'react'
-import ProductTwo from '/public/big.png';
-import { MinusIcon, PlusIcon, Trash2Icon } from 'lucide-react';
+import ItemCard from "@/components/Cart/ItemCard";
+import { cookies } from "next/headers";
+import { getProductsByIds } from "../../../sanity/utils";
+import { urlForImage } from "../../../sanity/lib/image";
+import { ShoppingBag } from "lucide-react";
+import { cartItemsTable, cartTable, db } from "@/lib/drizzle";
+import { eq } from "drizzle-orm";
+import CartPageContainer from "@/components/Cart/CartPageContainer";
 
-export default function Cart() {
-  return (
-    <div className="cart-wrapper">
-      <h2>Shopping Cart</h2>
-      <div className="cart-container">
-        <div className="cart-items">
-          <div className="item-card">
-            <div className="item-image">
-              <Image src={ProductTwo} alt="somethin truly special" />
-            </div>
-            <div className="item-details">
-              <div className="name-and-remove">
-                <h3>Flex Sweatpants</h3>
-                <button className="remove-item">
-                  <Trash2Icon width={28} height={28} />
-                </button>
-              </div>
-              <p className="item-tag">Dress</p>
-              <p className="delivery-est">Delivery Estimation</p>
-              <p className="delivery-days">5 Working Days</p>
-              <div className="price-and-qty">
-                <span className="price">$145</span>
-                <div>
-                  <span className="minus">
-                    <MinusIcon />
-                  </span>
-                  <span className="num">1</span>
-                  <span className="plus">
-                    <PlusIcon />
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="order-summary">
-          <h3>Order Summary</h3>
-          <div className="qty">
-            <p>Quantity</p>
-            <span>1 Product</span>
-          </div>
-          <div className="subtotal">
-            <p>Sub Total</p>
-            <span>$ 175</span>
-          </div>
-          <div>
-            <button className="btn">
-              Proceed to Checkout
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+async function getUserCart() {
+  const cookie = cookies();
+  const getUserId = cookie.get('user_id')?.value;
+  if (!getUserId) {
+    return {
+      message: 'No cart found.'
+    }
+  }
+  try {
+    const [{ id }] = await db
+      .select({
+        id: cartTable.id
+      })
+      .from(cartTable)
+      .where(
+        eq(cartTable.user_id, Number(getUserId))
+      );
+
+    const products = await db.select({
+      product_id: cartItemsTable.product_id,
+      quantity: cartItemsTable.quantity,
+      cart_id: cartItemsTable.cart_id
+    })
+      .from(cartItemsTable)
+      .where(
+        eq(cartItemsTable.cart_id, id)
+      )
+
+    return {
+      products,
+      cartId: id
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
+
+export default async function Cart() {
+  const data = await getUserCart();
+
+  let _products: any[] = [];
+  let quantity = 0;
+  let subtotal = 0;
+
+  if (data?.products) {
+    _products = await getProductsByIds(
+      data.products.map(d => d.product_id)
+    )
+
+    quantity = data.products.map(p => p.quantity).reduce((a, b) => a + b, 0)
+
+    subtotal = _products.filter((p, index) =>
+      p._id === data.products[index].product_id
+    ).map((p, index) =>
+      p.price * data.products[index].quantity
+    ).reduce((a, b) => a + b, 0)
+  }
+
+  return <CartPageContainer
+    _products={_products}
+    products={data?.products ? data?.products : []}
+    quantity={quantity}
+    subtotal={subtotal}
+  />
 }
