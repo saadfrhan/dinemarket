@@ -5,7 +5,7 @@ import React from 'react'
 import { cartItemsTable, cartTable, db } from "@/lib/drizzle";
 import { eq } from "drizzle-orm";
 
-export async function emptyCart(
+async function emptyCart(
     userId: number
 ) {
     try {
