@@ -1,6 +1,6 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/saadfrhan/fullstack-nextjs-marketplace)
 
-# online-marketplace
+# Fullstack Next.js Marketplace Application
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Database**: [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres)
