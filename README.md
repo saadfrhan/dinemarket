@@ -1,4 +1,4 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/saadfrhan/online-marketplace)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/saadfrhan/fullstack-nextjs-marketplace)
 
 # online-marketplace
 
@@ -15,7 +15,7 @@
 ## Running Locally
 
 ```bash
-git clone https://github.com/saadfrhan/online-marketplace.git
+git clone https://github.com/saadfrhan/fullstack-nextjs-marketplace.git
 cd online-marketplace
 pnpm install
 pnpm dev
