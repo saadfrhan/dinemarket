@@ -483,7 +483,7 @@
   }
 
   .product-details {
-    @apply flex flex-col flex-1 gap-10 mt-16 ml-16
+    @apply flex flex-col flex-1 gap-10 mt-16 lg-1k:ml-16
   }
 
   .name-and-category h3 {

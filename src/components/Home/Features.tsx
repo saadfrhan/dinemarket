@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import Feature from '/public/feature.webp'
+import Feature from '/public/feature.png'
 import { Button } from '../ui/button'
 
 export default function Features() {
