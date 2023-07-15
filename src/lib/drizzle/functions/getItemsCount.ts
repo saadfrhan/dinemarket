@@ -1,19 +1,17 @@
-import { cookies } from "next/headers";
-import { cartTable, db } from "./drizzle";
+import { auth } from "@clerk/nextjs";
+import { cartTable, db } from "../tables";
 import { eq } from "drizzle-orm";
 
 export async function getItemsCount() {
-    const cookie = cookies();
-    const getUserId = cookie.get('user_id')?.value;
-  
-    if (!getUserId) {
+    const { userId } = auth()
+    if (!userId) {
       return {
         items_count: 0
       }
     } else {
       const response = await db.select({
         items_count: cartTable.items_count
-      }).from(cartTable).where(eq(cartTable.user_id, Number(getUserId)))
+      }).from(cartTable).where(eq(cartTable.user_id, userId))
   
       if (!response[0]?.items_count) {
         return {

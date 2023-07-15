@@ -4,7 +4,7 @@ import {sql} from '@vercel/postgres';
 
 export const cartTable = pgTable('cart', {
   id: serial('id').primaryKey(),
-  user_id: integer('user_id').notNull(),
+  user_id: varchar('user_id', { length: 255 }).notNull(),
   items_count: integer('items_count').default(0)
 });
 
