@@ -36,7 +36,7 @@ export default function ItemCard({
         startTransition(() => {
             void addToCart({
                 product_id: _id,
-                quantity: quantity - 1
+                quantity: -1
             });
 
             router.refresh();
@@ -51,7 +51,7 @@ export default function ItemCard({
         startTransition(() => {
             void addToCart({
                 product_id: _id,
-                quantity: quantity + 1
+                quantity: 1
             });
 
             router.refresh();
