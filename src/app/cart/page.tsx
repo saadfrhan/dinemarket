@@ -1,51 +1,6 @@
-import ItemCard from "@/components/Cart/ItemCard";
-import { cookies } from "next/headers";
+import getUserCart from "@/lib/drizzle/functions/getUserCart";
 import { getProductsByIds } from "../../../sanity/utils";
-import { urlForImage } from "../../../sanity/lib/image";
-import { ShoppingBag } from "lucide-react";
-import { cartItemsTable, cartTable, db } from "@/lib/drizzle";
-import { eq } from "drizzle-orm";
 import CartPageContainer from "@/components/Cart/CartPageContainer";
-
-async function getUserCart() {
-  const cookie = cookies();
-  const getUserId = cookie.get('user_id')?.value;
-  if (!getUserId) {
-    return {
-      message: 'No cart found.'
-    }
-  }
-  try {
-    const [{ id }] = await db
-      .select({
-        id: cartTable.id
-      })
-      .from(cartTable)
-      .where(
-        eq(cartTable.user_id, Number(getUserId))
-      );
-
-    const products = await db.select({
-      product_id: cartItemsTable.product_id,
-      quantity: cartItemsTable.quantity,
-      cart_id: cartItemsTable.cart_id
-    })
-      .from(cartItemsTable)
-      .where(
-        eq(cartItemsTable.cart_id, id)
-      )
-
-    return {
-      products,
-      cartId: id
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-
-
 
 export default async function Cart() {
   const data = await getUserCart();

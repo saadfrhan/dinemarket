@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import Logo from '../Logo';
 import NavBtns from '../NavBtns';
 import CartIcon from '../CartIcon';
-
+import { UserButton } from "@clerk/nextjs";
 export default function MobileNavbarContainer({
     items_count
 }: {
@@ -44,6 +44,7 @@ export default function MobileNavbarContainer({
                     </div>
 
                     {showOverlay && <div className="flex flex-col items-center text-center gap-[1rem] justify-center">
+                    <UserButton afterSignOutUrl="/"/>
                         <CartIcon items_count={items_count} />
                         <NavBtns className='text-center flex flex-col gap-4' />
                     </div>}

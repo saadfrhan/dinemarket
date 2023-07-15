@@ -1,25 +1,21 @@
 "use server";
 
-import { cookies } from 'next/headers';
-import { cartItemsTable, cartTable, db } from '../lib/drizzle';
+import { auth } from '@clerk/nextjs';
+import { cartItemsTable, cartTable, db } from '../lib/drizzle/tables';
 import { and, eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
-import crypto from 'crypto'
 
 export async function deleteFromCart({ product_id }: {
     product_id: string
 }) {
 
-    const setCookies = cookies();
-    const getUserId = setCookies.get('user_id')?.value;
-    const user_id = Number(getUserId)
+    const {userId: user_id} = auth()
 
     console.log('user_id:', user_id);
 
     if (!user_id) {
-        // @ts-ignore
-        setCookies.set('user_id', crypto.randomInt(1, 1000000));
-        console.log('user_id generated:', getUserId);
+        console.log('Unauthenticated!');
+        return;
     }
 
     try {

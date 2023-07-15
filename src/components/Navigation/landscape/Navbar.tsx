@@ -3,7 +3,8 @@ import Logo from '../Logo'
 import NavBtns from '../NavBtns'
 import Search from '../Search'
 import CartIcon from '../CartIcon'
-import { getItemsCount } from '@/lib/getItemsCount'
+import UserBtn from '@/components/auth/UserButton'
+import { getItemsCount } from '@/lib/drizzle/functions/getItemsCount'
 
 export default async function Navbar() {
   const count = await getItemsCount();
@@ -13,6 +14,7 @@ export default async function Navbar() {
           <Logo />
           <NavBtns />
           <Search />
+          <UserBtn />
           <CartIcon {...count} />
         </div>
       </div>

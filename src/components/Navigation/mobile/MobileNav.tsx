@@ -1,4 +1,4 @@
-import { getItemsCount } from "@/lib/getItemsCount";
+import { getItemsCount } from "@/lib/drizzle/functions/getItemsCount";
 import MobileNavbarContainer from "./MobileNavbarContainer";
 
 export default async function MobileNavbar() {
