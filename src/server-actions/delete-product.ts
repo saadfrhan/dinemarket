@@ -23,12 +23,13 @@ export async function deleteFromCart({ product_id }: {
     }
 
     try {
-        const [{ id }] = await db.select({
+        const [{ id, items_count }] = await db.select({
             id: cartTable.id,
+            items_count: cartTable.items_count
         }).from(cartTable)
             .where(eq(cartTable.user_id, user_id))
 
-        const [{ product_id: deletedProductId, cart_id: cartId }] = await db.delete(
+        const [{ product_id: deletedProductId, cart_id: cartId, quantity }] = await db.delete(
             cartItemsTable
         )
             .where(
@@ -37,6 +38,11 @@ export async function deleteFromCart({ product_id }: {
                     eq(cartItemsTable.cart_id, id)
                 )
             ).returning()
+
+        await db
+            .update(cartTable)
+            .set({ items_count: items_count! - quantity })
+            .where(eq(cartTable.user_id, user_id));
 
         revalidatePath('/');
 
