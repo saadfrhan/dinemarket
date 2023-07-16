@@ -5,5 +5,5 @@ import { client } from './client';
 const imageUrlBuilder = createImageUrl(client);
 
 export function urlForImage(source: Image) {
-    return imageUrlBuilder?.image(source).auto('format').fit('max');
+    return imageUrlBuilder?.image(source);
 }
