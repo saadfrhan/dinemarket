@@ -109,6 +109,6 @@ export async function addToCart({ product_id, quantity }: {
             });
         }
     } else {
-        console.log('Not authenticated!');
+        throw new Error('unauthorized!')
     }
 }
