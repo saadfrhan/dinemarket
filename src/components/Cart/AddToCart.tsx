@@ -27,7 +27,7 @@ export default function AddToCart({
               })
               toast.success(
                 `${quantity}x ${name} has been added to your cart.`, {
-                duration: 1000
+                duration: 5000
               })
             }
           )
