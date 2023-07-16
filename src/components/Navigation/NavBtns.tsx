@@ -23,6 +23,6 @@ function NavBtns({ className = "flex gap-12" }: {
 
 export default NavBtns
 
-function NavBtn({ value, route }: NavBtnI) {
+export function NavBtn({ value, route }: NavBtnI) {
   return <Link href={`/products/${route}`}><h4>{value}</h4></Link>
 }

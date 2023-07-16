@@ -6,6 +6,7 @@
 - **Database**: [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres)
 - **ORM**: [Drizzle ORM](https://orm.drizzle.team/)
 - **Content Management**: [Sanity](https://www.sanity.io/)
+- **Authentication**: [Clerk](https://www.clerk.com)
 - **Deployment**: [Vercel](https://vercel.com)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com) & [Shadcn UI](https://ui.shadcn.com/)
 - **Payment Solution**: [Stripe](https://stripe.com/)
@@ -15,10 +16,10 @@
 ## Running Locally
 
 ```bash
-git clone https://github.com/saadfrhan/fullstack-nextjs-marketplace.git
-cd online-marketplace
-pnpm install
-pnpm dev
+  git clone https://github.com/saadfrhan/fullstack-nextjs-marketplace.git
+  cd fullstack-nextjs-marketplace
+  pnpm install
+  pnpm dev
 ```
 
 Create a `.env` file similar to [`.env.example`](./.env.example).
