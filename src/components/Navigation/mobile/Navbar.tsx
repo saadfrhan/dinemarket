@@ -4,14 +4,11 @@ import { AlignRight, X } from 'lucide-react'
 import React, { useState } from 'react'
 import Logo from '../Logo';
 import NavBtns from '../NavBtns';
-import CartIcon from '../CartIcon';
-import { UserButton } from "@clerk/nextjs";
-export default function MobileNavbarContainer({
-    items_count
-}: {
-    items_count: number | string
-}) {
+import UserOptions from '@/components/auth/UserOptions';
+
+export default function MobileNavbar() {
     const [showOverlay, setShowOverlay] = useState(false);
+
 
     return (
         <div className="nav-mobile-box">
@@ -44,8 +41,7 @@ export default function MobileNavbarContainer({
                     </div>
 
                     {showOverlay && <div className="flex flex-col items-center text-center gap-[1rem] justify-center">
-                    <UserButton afterSignOutUrl="/"/>
-                        <CartIcon items_count={items_count} />
+                        <UserOptions />
                         <NavBtns className='text-center flex flex-col gap-4' />
                     </div>}
 

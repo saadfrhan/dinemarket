@@ -1,14 +1,14 @@
 import {
   SignedIn,
   SignedOut,
-  UserButton,
   SignInButton
 } from '@clerk/nextjs';
+import UserBtn from './UserBtn';
 
-export default function UserBtn() {
+export default async function UserOptions() {
   return <>
     <SignedIn>
-      <UserButton afterSignOutUrl='/' />
+      <UserBtn />
     </SignedIn>
     <SignedOut>
       <SignInButton />
