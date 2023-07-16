@@ -1,12 +1,12 @@
 "use client";
 
 import { addToCart } from '@/server-actions/add-to-cart';
-import { LogIn, ShoppingCart } from 'lucide-react';
+import { LogInIcon, ShoppingCart } from 'lucide-react';
 import React, { useTransition } from 'react'
 import { toast } from 'react-hot-toast';
-import { Button } from '../ui/button';
-import { useRouter } from 'next/navigation';
-import { auth } from '@clerk/nextjs';
+import { Button, buttonVariants } from '../ui/button';
+import { SignedIn, SignedOut } from '@clerk/nextjs';
+import Link from 'next/link';
 
 export default function AddToCart({
   _id, quantity, price, name
@@ -14,13 +14,11 @@ export default function AddToCart({
   _id: string; quantity: number, price: number, name: string
 }) {
   let [_, startTransition] = useTransition();
-  const { push } = useRouter();
-  const { userId } = auth()
 
   return (
     <div className="add-to-cart">
-      <Button size="md" onClick={
-        userId ? () => {
+      <SignedIn>
+        <Button size="md" onClick={() => {
           startTransition(
             () => {
               void addToCart({
@@ -33,14 +31,20 @@ export default function AddToCart({
               })
             }
           )
-        } : () => {
-          toast.loading(`Redirecting to signin page...`)
-          push('/sign-in')
-        }
-      }>
-        {userId ? <ShoppingCart height={20} width={20} /> : <LogIn height={20} width={20} />}
-        {userId ? "Add to Cart" : "Sign In"}
-      </Button>
+        }}>
+          <ShoppingCart height={20} width={20} />
+          Add to Cart
+        </Button>
+      </SignedIn>
+      <SignedOut>
+        <Link href="/sign-in" className={buttonVariants({
+          variant: 'default',
+          size: 'md',
+        })}>
+            <LogInIcon height={20} width={20} />
+            Login
+        </Link>
+      </SignedOut>
 
       <p className="price">
         ${price}.00
