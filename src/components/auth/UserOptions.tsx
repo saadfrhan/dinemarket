@@ -4,14 +4,19 @@ import {
   SignInButton
 } from '@clerk/nextjs';
 import UserBtn from './UserBtn';
+import { Button } from '../ui/button';
 
-export default async function UserOptions() {
+export default function UserOptions() {
   return <>
     <SignedIn>
       <UserBtn />
     </SignedIn>
     <SignedOut>
-      <SignInButton />
+      <SignInButton>
+        <Button>
+          Sign in
+        </Button>
+      </SignInButton>
     </SignedOut>
   </>;
 }

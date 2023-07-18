@@ -331,7 +331,7 @@
   }
 
   .newsletter-background {
-    @apply max-md-650:text-[4rem] max-lg-1k:text-[6.2rem] font-extrabold text-[7.5rem] leading-[151px] text-[#f2f3f7] absolute z-[-1]
+    @apply max-md-650:text-[4rem] max-[375px]:text-[2rem]  max-lg-1k:text-[6.2rem] font-extrabold text-[7.5rem] leading-[151px] text-[#f2f3f7] absolute z-[-1]
   }
 
   .newsletter h1 {
