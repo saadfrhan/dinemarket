@@ -26,10 +26,10 @@ export async function addToCart({ product_id, quantity }: {
                 .from(cartTable)
                 .where(eq(cartTable.user_id, user_id))
                 .limit(1);
-    
+
             let cartId = 0;
             let itemsCount = 0;
-    
+
             if (existingCart.length !== 0) {
                 // If cart exists, use existing cart's ID
                 cartId = existingCart[0].id;
@@ -41,13 +41,13 @@ export async function addToCart({ product_id, quantity }: {
                     .insert(cartTable)
                     .values({ user_id })
                     .returning();
-    
+
                 cartId = id;
-    
+
                 console.log('new cart created. cart ID:', cartId);
             }
-    
-    
+
+
             // Check if the product already exists in the cart
             const existingCartItem = await db
                 .select()
@@ -57,26 +57,30 @@ export async function addToCart({ product_id, quantity }: {
                         eq(cartItemsTable.product_id, product_id))
                 )
                 .limit(1);
-    
+
             if (existingCartItem.length !== 0) {
                 console.log('existing cart item:', existingCartItem[0]);
-    
+
                 // If the item exists, update the quantity
                 await db
                     .update(cartItemsTable)
-                    .set({ quantity: existingCartItem[0].quantity + quantity })
+                    .set({ quantity })
                     .where(eq(cartItemsTable.id, existingCartItem[0].id));
-    
+
+                const _quantity = existingCartItem[0].quantity > quantity ?
+                    itemsCount - (existingCartItem[0].quantity - quantity) :
+                    itemsCount + (quantity - existingCartItem[0].quantity);
+
                 await db
                     .update(cartTable)
-                    .set({ items_count: itemsCount + quantity })
+                    .set({ items_count: _quantity })
                     .where(eq(cartTable.user_id, user_id));
-    
+
                 console.log("Existing item quantity updated in the cart.");
-    
+
             } else {
                 console.log('new cart item');
-    
+
                 // Insert the new item into the cart
                 await db
                     .insert(cartItemsTable)
@@ -85,16 +89,18 @@ export async function addToCart({ product_id, quantity }: {
                         product_id,
                         quantity
                     });
-    
+
                 await db
                     .update(cartTable)
-                    .set({ items_count: itemsCount + quantity });
-    
+                    .set({
+                        items_count: itemsCount + quantity
+                    });
+
                 console.log("New item added to the cart.");
             }
-    
+
             revalidatePath('/');
-    
+
             console.log({
                 message: 'Cart and cart items successfully created or updated!',
                 status: 200

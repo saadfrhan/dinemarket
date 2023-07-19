@@ -6,6 +6,7 @@ import { MinusIcon, PlusIcon, Trash2Icon } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation';
+import { Button } from '../ui/button';
 
 interface ItemCardProps {
     _id: string;
@@ -29,29 +30,13 @@ export default function ItemCard({
     const [_quantity, setQuantity] = useState(quantity ? quantity : 0)
     const [disableButton, setDisableButton] = useState(false);
 
-    const decreaseQuantity = () => {
-        setQuantity(q => q - 1)
+    const handleChange = () => {
         setDisableButton(true);
 
         startTransition(() => {
             void addToCart({
                 product_id: _id,
-                quantity: -1
-            });
-
-            router.refresh();
-        });
-        setDisableButton(false)
-    };
-
-    const increaseQuantity = () => {
-        setQuantity(q => q + 1)
-        setDisableButton(true);
-
-        startTransition(() => {
-            void addToCart({
-                product_id: _id,
-                quantity: 1
+                quantity: _quantity
             });
 
             router.refresh();
@@ -87,25 +72,29 @@ export default function ItemCard({
                 <div className="price-and-qty">
                     <span className="price">${price}</span>
 
-                    <div>
-                        <span
-                            className="minus"
-                            onClick={() => decreaseQuantity()}
-                            aria-disabled={disableButton}
-                        >
-                            <MinusIcon />
-                        </span>
+                    <div className="flex gap-4">
+                        <div>
+                            <span
+                                className="minus"
+                                onClick={() => setQuantity(q => q - 1)}
+                                aria-disabled={disableButton}
+                            >
+                                <MinusIcon />
+                            </span>
 
-                        <span className="num">{_quantity}</span>
+                            <span className="num">{_quantity}</span>
 
-                        <span
-                            className="plus"
-                            onClick={() => increaseQuantity()}
-                            aria-disabled={disableButton}
-                        >
-                            <PlusIcon />
-                        </span>
+                            <span
+                                className="plus"
+                                onClick={() => setQuantity(q => q + 1)}
+                                aria-disabled={disableButton}
+                            >
+                                <PlusIcon />
+                            </span>
+                        </div>
+                        <Button onClick={() => handleChange()}>Update</Button>
                     </div>
+
                 </div>
 
             </div>
