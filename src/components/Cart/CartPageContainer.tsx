@@ -99,11 +99,9 @@ export default function CartPageContainer(
               <span>$ {subtotal}</span>
             </div>
 
-            <div>
-              <Button onClick={handleCheckout}>
+              <Button onClick={handleCheckout} className='justify-center'>
                 Proceed to Checkout
               </Button>
-            </div>
 
           </div>)}
 
