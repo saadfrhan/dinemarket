@@ -10,7 +10,7 @@ export const cartTable = pgTable('cart', {
 
 export const cartItemsTable = pgTable('cart_items', {
   id: serial('id').primaryKey(),
-  cart_id: integer('cart_id').references(() => cartTable.id),
+  cart_id: integer('cart_id').references(() => cartTable.id, {onDelete: "cascade"}),
   product_id: varchar('product_id', { length: 255 }).notNull(), // Corrected the product_id field
   quantity: integer('quantity').notNull()
 });
